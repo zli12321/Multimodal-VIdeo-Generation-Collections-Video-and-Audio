@@ -76,6 +76,7 @@ Welcome to contribute and discuss!
 | Model / System | Architecture | Representative Notes | Year Released | Website |
 | :--- | :--- | :--- | :--- | :--- |
 | **Proprietary Models** | | | | |
+| PAN (PanWorld) | GLP (LLM + Video Diffusion)| General world model; long-horizon action-conditioned simulation | Nov 2025 | [Link](https://panworld.ai/) |
 | Google Veo 3 | Diffusion + synchronized audio | Latest Veo with native audiovisual synthesis | May 2025 | [Link](https://deepmind.google/models/veo/) |
 | OpenAI Sora 2 | DiT (enhanced) | Improved temporal coherence; native audio sync | Sep 2025 | [Link](https://openai.com/index/sora-2/) |
 | Wan2.6 | MoE DiT + multimodal transformer | Simultaneous audio-visual generation | Dec 2025 | [Link](https://www.xrmm.com/) |
