@@ -13,8 +13,10 @@
 - [📚 Citation](#-citation)
 - [✨ Representative Models](#-representative-models)
 - [🏗️ Architectures & Evolution](#-architectures--evolution)
-  - [Core Architectures](#core-architectures)
-  - [Native Multimodality & DiT](#native-multimodality--dit)
+  - [1. Variational Autoencoder (VAE)](#1-variational-autoencoder-vae)
+  - [2. U-Net Architectures](#2-u-net-architectures)
+  - [3. Diffusion Transformer (DiT)](#3-diffusion-transformer-dit)
+  - [4. Future: Mixture of Experts (MoE)](#4-future-mixture-of-experts-moe)
 - [⚙️ Post-Training & Alignment](#-post-training--alignment)
 - [📊 Evaluation](#-evaluation)
 - [🚀 Applications & Research Directions](#-applications--research-directions)
@@ -63,36 +65,63 @@ A summary of current state-of-the-art multimodal video diffusion models discusse
 
 ## 🏗️ Architectures & Evolution
 
-Multimodal video generation requires synchronizing distinct modalities (visual frames and audio waveforms) within a unified architecture.
+Multimodal video generation requires synchronizing distinct modalities (visual frames and audio waveforms) within a unified architecture. We trace the evolution from foundational VAEs to modern DiT and MoE architectures.
 
-### Core Architectures
+### 1. Variational Autoencoder (VAE)
 
-We trace the evolution from **Variational Autoencoders (VAEs)** to **Diffusion Models**.
+**Overview:** VAEs establish a probabilistic mapping between input data and a latent space. In modern multimodal systems, they primarily serve as **compression mechanisms** (Video VAE & Audio VAE) to transform high-dimensional raw data into compact latent representations for efficient processing.
 
-- **VAE:** Serves as a compression mechanism (Video VAE & Audio VAE) to transform high-dimensional data into compact latent representations.
-- **U-Net:** Foundational backbone for early diffusion models (e.g., MM-Diffusion), using coupled subnets for joint denoising.
-- **Diffusion Transformer (DiT):** The modern standard, replacing U-Net with transformer blocks for better scalability and global context modeling.
-
-<div align="center">
-  <img src="fig/Unet.drawio.svg" width="30%" alt="U-Net"/>
-  <img src="fig/VAE.png" width="30%" alt="VAE"/>
-  <img src="fig/DiT.svg" width="30%" alt="DiT"/>
-  <br>
-  <em>Figure 1: Core architectures: (a) U-Net, (b) VAE, (c) Diffusion Transformer (DiT).</em>
-</div>
-
-### Native Multimodality & DiT
-
-Modern systems (e.g., **OVI**, **LTX-2**) utilize **Diffusion Transformers (DiT)** to model the joint distribution of video and audio.
-
-- **Dual-Stream Diffusion Transformer Fusion:** Enables bidirectional communication between video and audio streams via cross-attention. A2V and V2A attention mechanisms allow each modality to condition the other.
-- **Mixture of Experts (MoE):** Emerging designs like **Wan 2.6** use MoE to handle high-noise (global structure) and low-noise (texture/consistency) phases efficiently, reducing computational costs while scaling to billions of parameters.
+| Component             | Function                                 | Key Characteristics                             |
+| :-------------------- | :--------------------------------------- | :---------------------------------------------- |
+| **Video VAE Encoder** | Compresses raw frames into video latents | 3D Encoder with spatial & temporal convolutions |
+| **Audio VAE Encoder** | Transforms waveforms into audio latents  | Encodes acoustic features & temporal dynamics   |
 
 <div align="center">
-  <img src="fig/architecture.png" width="100%" alt="Architecture Evolution"/>
+  <img src="fig/VAE.png" width="40%" alt="VAE Architecture"/>
   <br>
-  <em>Figure 2: Architecture evolutions of multimodal video generation models towards native audio-visual synthesis.</em>
+  <em>Figure 1: Variational Autoencoder (VAE) architecture used for latent space encoding.</em>
 </div>
+
+### 2. U-Net Architectures
+
+**Overview:** Originally designed for segmentation, the U-Net's encoder-decoder structure with skip connections became the backbone for early diffusion models. For multimodal generation, **Coupled U-Nets** are used to jointly denoise video and audio streams.
+
+| Model                                                          | Architecture  | Key Features                                                          | Paper                                         |
+| :------------------------------------------------------------- | :------------ | :-------------------------------------------------------------------- | :-------------------------------------------- |
+| **[MM-Diffusion](https://github.com/researchmm/MM-Diffusion)** | Coupled U-Net | Two parallel U-Net subnets (Video & Audio) with cross-modal attention | [CVPR 2023](https://arxiv.org/abs/2305.14524) |
+| **MM-LDM**                                                     | Latent U-Net  | Operates in shared latent space to reduce computational costs         | [Paper](https://arxiv.org)                    |
+
+<div align="center">
+  <img src="fig/Unet.drawio.svg" width="40%" alt="U-Net Architecture"/>
+  <br>
+  <em>Figure 2: U-Net architecture, the foundation for early joint generation models like MM-Diffusion.</em>
+</div>
+
+### 3. Diffusion Transformer (DiT)
+
+**Overview:** The current industry standard. DiT replaces U-Net with Transformer blocks, enabling better scalability and global spatiotemporal reasoning. Modern systems use **Dual-Stream Fusion**, where video and audio streams communicate bidirectionally via cross-attention (A2V and V2A).
+
+| Model                                                | Architecture     | Key Features                                   | Paper                      |
+| :--------------------------------------------------- | :--------------- | :--------------------------------------------- | :------------------------- |
+| **[OVI](https://huggingface.co/spaces/akhaliq/Ovi)** | DiT + Sync Audio | Native 4K @ 50fps; Open-source foundation      | [Paper](https://arxiv.org) |
+| **[LTX-2](https://huggingface.co/Lightricks/LTX-2)** | DiT + Sync Audio | Native 4K @ 50fps; Open-source foundation      | [Paper](https://arxiv.org) |
+| **[Sora 2](https://openai.com/index/sora-2/)**       | Enhanced DiT     | Improved temporal coherence; native audio sync | -                          |
+| **[Veo 3.1](https://deepmind.google/models/veo/)**   | Diffusion + Sync | Native audiovisual synthesis                   | -                          |
+
+<div align="center">
+  <img src="fig/DiT.svg" width="40%" alt="DiT Architecture"/>
+  <img src="fig/architecture.png" width="90%" alt="Architecture Evolution"/>
+  <br>
+  <em>Figure 3: Diffusion Transformer (DiT) and the evolution towards native audio-visual synthesis with Dual-Stream Fusion.</em>
+</div>
+
+### 4. Future: Mixture of Experts (MoE)
+
+**Overview:** To scale to billions of parameters efficiently, **Mixture of Experts (MoE)** architectures introduce sparse activation. Only a subset of parameters (experts) is activated for each input token, allowing models to handle high-noise (global structure) and low-noise (fine details) phases with specialized experts.
+
+| Model                                | Architecture | Key Features                                                        | Paper                      |
+| :----------------------------------- | :----------- | :------------------------------------------------------------------ | :------------------------- |
+| **[Wan 2.6](https://www.xrmm.com/)** | MoE DiT      | Sparse activation for efficient scaling; simultaneous AV generation | [Paper](https://arxiv.org) |
 
 ---
 
@@ -119,7 +148,7 @@ Pre-trained base models often require adaptation for precise audio-visual synchr
 <div align="center">
   <img src="fig/Post-Training-Methods.svg" width="90%" alt="Post Training Methods"/>
   <br>
-  <em>Figure 3: Common post-training methods including PEFT, Alignment Modules, and Attention Injection.</em>
+  <em>Figure 4: Common post-training methods including PEFT, Alignment Modules, and Attention Injection.</em>
 </div>
 
 ---
@@ -139,7 +168,7 @@ Evaluating joint video-audio generation is complex, requiring assessments of vid
 <div align="center">
   <img src="fig/Video-Audio GenerationEvaluation.svg" width="90%" alt="Evaluation Framework"/>
   <br>
-  <em>Figure 4: Multimodal Evaluation Common Practices.</em>
+  <em>Figure 5: Multimodal Evaluation Common Practices.</em>
 </div>
 
 ---
@@ -151,7 +180,7 @@ The field is expanding into diverse domains, moving beyond silent video to immer
 <div align="center">
   <img src="fig/application.svg" width="100%" alt="Applications"/>
   <br>
-  <em>Figure 5: Mainstream Multimodal Video Generation Research Areas.</em>
+  <em>Figure 6: Mainstream Multimodal Video Generation Research Areas.</em>
 </div>
 
 ### Video-to-Audio (V2A)
