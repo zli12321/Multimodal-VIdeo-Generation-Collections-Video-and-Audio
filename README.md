@@ -39,16 +39,16 @@ If you find this survey useful for your research, please cite our work:
 
 A summary of current state-of-the-art multimodal video diffusion models discussed in our survey.
 
-| Model / System              | Architecture             | Key Features                                   | Release   |
-| :-------------------------- | :----------------------- | :--------------------------------------------- | :-------- |
-| **Google Veo 3.1**          | Diffusion + sync audio   | Native audiovisual synthesis                   | May 2025  |
-| **OpenAI Sora 2**           | DiT (enhanced)           | Improved temporal coherence; native audio sync | Sep 2025  |
-| **Grok 4**                  | -                        | -                                              | July 2025 |
-| **Wan 2.6**                 | MoE DiT + MM Transformer | Simultaneous audio-visual generation           | Dec 2025  |
-| **Kling 2.6**               | DiT + MM Transformer     | Simultaneous audio-visual generation           | Dec 2025  |
-| **MM-Diffusion** $^\dagger$ | Decoupled U-Net          | Early joint generation foundation model        | 2023      |
-| **OVI** $^\dagger$          | DiT + sync audio-video   | Native 4K @ 50fps; open-source foundation      | Oct 2025  |
-| **LTX-2** $^\dagger$        | DiT + sync audio-video   | Native 4K @ 50fps; open-source foundation      | Jan 2026  |
+| Model / System                                                            | Architecture             | Key Features                                   | Release   |
+| :------------------------------------------------------------------------ | :----------------------- | :--------------------------------------------- | :-------- |
+| [**Google Veo 3.1**](https://deepmind.google/models/veo/)                 | Diffusion + sync audio   | Native audiovisual synthesis                   | May 2025  |
+| [**OpenAI Sora 2**](https://openai.com/index/sora-2/)                     | DiT (enhanced)           | Improved temporal coherence; native audio sync | Sep 2025  |
+| **Grok 4**                                                                | -                        | -                                              | July 2025 |
+| [**Wan 2.6**](https://www.xrmm.com/)                                      | MoE DiT + MM Transformer | Simultaneous audio-visual generation           | Dec 2025  |
+| [**Kling 2.6**](https://klingai.com/global/)                              | DiT + MM Transformer     | Simultaneous audio-visual generation           | Dec 2025  |
+| [**MM-Diffusion**](https://github.com/researchmm/MM-Diffusion) $^\dagger$ | Decoupled U-Net          | Early joint generation foundation model        | 2023      |
+| [**OVI**](https://huggingface.co/spaces/akhaliq/Ovi) $^\dagger$           | DiT + sync audio-video   | Native 4K @ 50fps; open-source foundation      | Oct 2025  |
+| [**LTX-2**](https://huggingface.co/Lightricks/LTX-2) $^\dagger$           | DiT + sync audio-video   | Native 4K @ 50fps; open-source foundation      | Jan 2026  |
 
 > $^\dagger$ _Denotes Open-Source Models_
 
