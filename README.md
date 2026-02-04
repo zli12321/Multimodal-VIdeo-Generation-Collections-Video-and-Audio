@@ -56,18 +56,76 @@ Coming soon
 
 A summary of current state-of-the-art multimodal video diffusion models discussed in our survey.
 
-| Model / System                                                            | Architecture             | Key Features                                   | Release   |
-| :------------------------------------------------------------------------ | :----------------------- | :--------------------------------------------- | :-------- |
-| **[Google Veo 3.1](https://deepmind.google/models/veo/)**                 | Diffusion + Sync Audio   | Native audiovisual synthesis                   | May 2025  |
-| **[OpenAI Sora 2](https://openai.com/index/sora-2/)**                     | DiT (Enhanced)           | Improved temporal coherence; native audio sync | Sep 2025  |
-| **Grok 4**                                                                | -                        | -                                              | July 2025 |
-| **[Wan 2.6](https://www.xrmm.com/)**                                      | MoE DiT + MM Transformer | Simultaneous audio-visual generation           | Dec 2025  |
-| **[Kling 2.6](https://klingai.com/global/)**                              | DiT + MM Transformer     | Simultaneous audio-visual generation           | Dec 2025  |
-| **[MM-Diffusion](https://github.com/researchmm/MM-Diffusion)** $^\dagger$ | Decoupled U-Net          | Early joint generation foundation model        | 2023      |
-| **[OVI](https://huggingface.co/spaces/akhaliq/Ovi)** $^\dagger$           | DiT + Sync Audio-Video   | Native 4K @ 50fps; open-source foundation      | Oct 2025  |
-| **[LTX-2](https://huggingface.co/Lightricks/LTX-2)** $^\dagger$           | DiT + Sync Audio-Video   | Native 4K @ 50fps; open-source foundation      | Jan 2026  |
+<table>
+  <thead>
+    <tr>
+      <th align="left">Model / System</th>
+      <th align="left">Architecture</th>
+      <th align="left">Key Features</th>
+      <th align="left">Release</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr style="background-color: #f6f8fa;">
+      <td colspan="4"><b>Proprietary Business Models</b></td>
+    </tr>
+    <tr>
+      <td><a href="https://deepmind.google/models/veo/"><b>Google Veo 3.1</b></a></td>
+      <td>Diffusion + Sync Audio</td>
+      <td>Native audiovisual synthesis</td>
+      <td>May 2025</td>
+    </tr>
+    <tr>
+      <td><a href="https://openai.com/index/sora-2/"><b>OpenAI Sora 2</b></a></td>
+      <td>DiT (Enhanced)</td>
+      <td>Improved temporal coherence; native audio sync</td>
+      <td>Sep 2025</td>
+    </tr>
+    <tr>
+      <td><b>Grok 4</b></td>
+      <td>-</td>
+      <td>-</td>
+      <td>July 2025</td>
+    </tr>
+    <tr>
+      <td><a href="https://www.xrmm.com/"><b>Wan 2.6</b></a></td>
+      <td>MoE DiT + MM Transformer</td>
+      <td>Simultaneous audio-visual generation</td>
+      <td>Dec 2025</td>
+    </tr>
+    <tr>
+      <td><a href="https://klingai.com/global/"><b>Kling 2.6</b></a></td>
+      <td>DiT + MM Transformer</td>
+      <td>Simultaneous audio-visual generation</td>
+      <td>Dec 2025</td>
+    </tr>
+    <tr style="background-color: #f6f8fa;">
+      <td colspan="4"><b>Open-Source Models</b></td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/researchmm/MM-Diffusion"><b>MM-Diffusion</b></a> <sup>†</sup></td>
+      <td>Decoupled U-Net</td>
+      <td>Early joint generation foundation model</td>
+      <td>2023</td>
+    </tr>
+    <tr>
+      <td><a href="https://huggingface.co/spaces/akhaliq/Ovi"><b>OVI</b></a> <sup>†</sup></td>
+      <td>DiT + Sync Audio-Video</td>
+      <td>Native 4K @ 50fps; open-source foundation</td>
+      <td>Oct 2025</td>
+    </tr>
+    <tr>
+      <td><a href="https://huggingface.co/Lightricks/LTX-2"><b>LTX-2</b></a> <sup>†</sup></td>
+      <td>DiT + Sync Audio-Video</td>
+      <td>Native 4K @ 50fps; open-source foundation</td>
+      <td>Jan 2026</td>
+    </tr>
+  </tbody>
+</table>
 
-> $^\dagger$ _Denotes Open-Source Models_
+<p align="left">
+  <sub><sup>†</sup> <em>Denotes Open-Source Models</em></sub>
+</p>
 
 <div align="center">
   <img src="fig/application_merged.drawio.svg" width="90%" alt="application_merged"/>
