@@ -209,21 +209,58 @@ These methods introduce additional control pathways to guide the generation proc
 
 ## 📊 Evaluation
 
-Evaluating joint video-audio generation is complex, requiring assessments of video quality, audio quality, and cross-modal alignment.
-
-| Paradigm         | Category          | Metrics / Aspects                                                                        |
-| :--------------- | :---------------- | :--------------------------------------------------------------------------------------- |
-| **Quantitative** | **Video Quality** | **FVD**, **CLIPScore**, **VBench-2.0** (physics, human fidelity), **VBench++**           |
-|                  | **Audio Quality** | **FAD**, **KL Divergence**, **PAM** (Prompt Adherence), **Audiobox Aesthetics**, **MAD** |
-|                  | **AV Alignment**  | **AV-Align**, **DeSync** (temporal misalignment), **ImageBind Score**, **FAVD**          |
-| **Qualitative**  | **Protocol**      | **MOS** (Mean Opinion Score), Side-by-Side Preference                                    |
-|                  | **Aspects**       | Temporal Coherence, Sound Relevance, Spatial Consistency                                 |
+Evaluating joint video-audio generation is complex, requiring assessments of video quality, audio quality, and cross-modal alignment. Common practices involve both quantitative metrics and qualitative human evaluation.
 
 <div align="center">
   <img src="fig/Video-Audio GenerationEvaluation.svg" width="90%" alt="Evaluation Framework"/>
   <br>
   <em>Figure 5: Multimodal Evaluation Common Practices.</em>
 </div>
+
+### 1. Quantitative Evaluation
+
+Quantitative evaluation assesses each modality independently as well as their cross-modal alignment.
+
+#### Video Quality Metrics
+
+| Metric / Benchmark               | Category         | Author             | Year | Key Contribution                                                                     |
+| :------------------------------- | :--------------- | :----------------- | :--- | :----------------------------------------------------------------------------------- |
+| **FVD** (Fréchet Video Distance) | **Distribution** | Unterthiner et al. | 2019 | Reference-based metric measuring distribution distance using I3D features.           |
+| **CLIPScore**                    | **Semantic**     | Hessel et al.      | 2021 | Reference-free metric measuring text-video semantic alignment.                       |
+| **VBench**                       | **Benchmark**    | Huang et al.       | 2023 | Fine-grained evaluation across dimensions like Dynamic Degree and Aesthetic Quality. |
+| **VBench++**                     | **Benchmark**    | Huang et al.       | 2025 | Extends VBench to image-to-video and model trustworthiness assessment.               |
+| **VBench-2.0**                   | **Benchmark**    | Zheng et al.       | 2025 | Introduces physics-based realism, commonsense reasoning, and human fidelity.         |
+
+#### Audio Quality Metrics
+
+| Metric / Benchmark               | Category         | Author          | Year | Key Contribution                                                             |
+| :------------------------------- | :--------------- | :-------------- | :--- | :--------------------------------------------------------------------------- |
+| **FAD** (Fréchet Audio Distance) | **Distribution** | Kilgour et al.  | 2019 | Compares generated and reference audio distributions using VGGish features.  |
+| **KAD** (Kernel Audio Distance)  | **Distribution** | -               | -    | MMD-based approach addressing FAD's Gaussian assumption limitations.         |
+| **CLAP Score**                   | **Alignment**    | Wu et al.       | 2023 | Measures text-audio alignment via cosine similarity in CLAP embedding space. |
+| **PAM**                          | **Prompting**    | Deshmukh et al. | 2024 | Prompt Adherence Metric using Audio-Language Models.                         |
+| **Audiobox Aesthetics**          | **Quality**      | Vyas et al.     | 2023 | Decomposes quality into axes like Production Quality and Content Enjoyment.  |
+| **MAD**                          | **Distribution** | -               | -    | MAUVE Audio Divergence, a non-Gaussian alternative to FAD.                   |
+
+#### Audio-Visual Alignment Metrics
+
+| Metric / Benchmark   | Category         | Author         | Year | Key Contribution                                                           |
+| :------------------- | :--------------- | :------------- | :--- | :------------------------------------------------------------------------- |
+| **AV-Align**         | **Semantic**     | Yariv et al.   | 2023 | Measures semantic correspondence between audio and video streams.          |
+| **DeSync**           | **Temporal**     | Yang et al.    | 2024 | Quantifies temporal misalignment using the Synchformer model.              |
+| **ImageBind Score**  | **Alignment**    | Girdhar et al. | 2023 | Computes cosine similarity in ImageBind's joint embedding space.           |
+| **FAVD**             | **Distribution** | Kilgour et al. | 2019 | Extends Fréchet distance to joint audio-visual features.                   |
+| **Spatial AV-Align** | **Spatial**      | Yariv et al.   | 2023 | Evaluates spatial coherence using object detection and sound localization. |
+
+### 2. Qualitative Evaluation
+
+Human evaluation remains essential for capturing perceptual synchronization and semantic coherence.
+
+| Paradigm                     | Description                                                              | Key Aspects                                            |
+| :--------------------------- | :----------------------------------------------------------------------- | :----------------------------------------------------- |
+| **Overall Preference (MOS)** | Annotators rate overall quality or select the better sample (1-5 scale). | Combined audiovisual experience.                       |
+| **Multi-Aspect Scoring**     | Quality decomposed into modality-specific and cross-modal dimensions.    | Visual Fidelity, Audio Quality, AV Sync.               |
+| **PEAVS Framework**          | Comprehensive protocol for perceptual evaluation of synchrony.           | Temporal offsets, speed variations, content alignment. |
 
 ---
 
