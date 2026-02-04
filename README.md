@@ -23,11 +23,15 @@
   - [3. Audio-Visual Alignment Modules](#3-audio-visual-alignment-modules)
   - [4. Attention Injection & ControlNet](#4-attention-injection--controlnet)
 - [📊 Evaluation](#-evaluation)
-- [🚀 Applications & Research Directions](#-applications--research-directions)
-  - [Commercial & Personal Applications](#1-commercial--personal-applications)
-  - [Human-Centric Generation](#2-human-centric-generation)
-  - [Research Directions: V2A & Streaming](#3-research-directions-v2a--streaming)
-  - [Research Directions: Long Video & World Models](#4-research-directions-long-video--world-models)
+- [🚀 Applications and New Research Directions](#-applications-and-new-research-directions)
+  - [Personal User Applications](#personal-user-applications)
+  - [Commercial Applications of Video Generation](#commercial-applications-of-video-generation)
+- [🔬 Active Research Areas in Multimodal Video Generation](#-active-research-areas-in-multimodal-video-generation)
+  - [Video-to-Audio Generation](#video-to-audio-generation)
+  - [Streaming Multimodal Video Generation](#streaming-multimodal-video-generation)
+  - [Human-Centric Multimodal Video Generation](#human-centric-multimodal-video-generation)
+  - [Long Multimodal Video Generation](#long-multimodal-video-generation)
+  - [Interactive Multimodal Video Generation and World Models](#interactive-multimodal-video-generation-and-world-models)
 
 ---
 
@@ -295,61 +299,97 @@ Human evaluation remains essential for capturing perceptual synchronization and 
 
 ---
 
-## 🚀 Applications & Research Directions
+## 🚀 Applications and New Research Directions
 
-The field is expanding into diverse domains, moving beyond silent video to immersive audiovisual experiences. Starting in 2026, the creative landscape is shifting towards **native audiovisual synthesis**, where visual dynamics and acoustic environments are generated as a unified output.
+With the emerging capabilities of joint video-audio generation models, multimodal content creation is entering a new phase where visual and auditory elements are produced synchronously. This shift moves beyond silent video to **native audiovisual synthesis**, driven by proprietary models like **Sora 2**, **Veo 3.1**, and **Wan 2.6**.
 
 <div align="center">
   <img src="fig/application.svg" width="100%" alt="Applications"/>
   <br>
-  <em>Figure 6: Mainstream Multimodal Video Generation Research Areas.</em>
+  <em>Figure: Mainstream Multimodal Video Generation Research Areas.</em>
 </div>
 
-### 1. Commercial & Personal Applications
+### Personal User Applications
 
-Commercial adoption is accelerating across social media, advertising, and entertainment, driven by models that integrate native audio generation.
+Personal applications focus on social media content creation, entertainment, and personalized avatar interaction.
 
-| Paper / Model  | Category              | Author   | Year | Key Contribution                                                       |
-| :------------- | :-------------------- | :------- | :--- | :--------------------------------------------------------------------- |
-| **Sora 2**     | **Social / Creation** | OpenAI   | 2025 | Native audio sync, improved physics, and social sharing app.           |
-| **Veo 3.1**    | **Advertising**       | Google   | 2025 | Generates 60s spots with synced dialogue and sound effects.            |
-| **Firefly**    | **Production**        | Adobe    | 2025 | Commercial-safe generative video and audio for professional workflows. |
-| **Kling AI**   | **Social / Creation** | Kuaishou | 2025 | Integrated audio capabilities for text-to-video generation.            |
-| **ElevenLabs** | **Gaming / NPC**      | -        | 2025 | Real-time voice generation and sound effects for interactive media.    |
+| Paper / Model   | Category     | Author      | Year | Key Contribution                                                                        |
+| :-------------- | :----------- | :---------- | :--- | :-------------------------------------------------------------------------------------- |
+| **Sora 2**      | Social Media | OpenAI      | 2025 | Generates synchronized dialogue, Foley, and ambient audio; includes social sharing app. |
+| **Doubao**      | Social Media | ByteDance   | 2025 | Integrated audio-visual generation for short clips on TikTok.                           |
+| **Kling AI**    | Social Media | Kuaishou    | 2025 | Text-to-video with integrated audio capabilities.                                       |
+| **Hallo**       | Avatar       | Xu et al.   | 2024 | Audio-driven portrait animation with natural lip sync.                                  |
+| **EchoMimic**   | Avatar       | Chen et al. | 2024 | Identity-preserving audio-driven avatar generation.                                     |
+| **OmniHuman-1** | Avatar       | Lin et al.  | 2025 | Full-body audio-driven animation with expressive gestures and singing.                  |
 
-### 2. Human-Centric Generation
+### Commercial Applications of Video Generation
 
-Generating realistic human avatars with synchronized speech and gestures is a key frontier for virtual communication and personalized media.
+Commercial adoption spans advertising, film production, and gaming, leveraging native audio to reduce post-production overhead.
 
-| Paper / Model   | Category        | Author       | Year | Key Contribution                                                     |
-| :-------------- | :-------------- | :----------- | :--- | :------------------------------------------------------------------- |
-| **OmniHuman-1** | **Full-Body**   | Lin et al.   | 2025 | Realistic full-body audio-driven animation with expressive gestures. |
-| **EMO**         | **Portrait**    | Tian et al.  | 2025 | Expressive audio-driven portrait animation.                          |
-| **Hallo**       | **Portrait**    | Xu et al.    | 2024 | Audio-driven portrait animation with natural lip sync.               |
-| **EchoMimic**   | **Portrait**    | Chen et al.  | 2024 | Identity-preserving audio-driven avatar generation.                  |
-| **Wan Animate** | **Pose / Body** | Cheng et al. | 2025 | Unified character animation from pose sequences.                     |
+| Paper / Model  | Category    | Author     | Year | Key Contribution                                                           |
+| :------------- | :---------- | :--------- | :--- | :------------------------------------------------------------------------- |
+| **Veo 3**      | Advertising | Google     | 2025 | Generates cinema-quality ads with synchronized dialogue and sound effects. |
+| **Firefly**    | Production  | Adobe      | 2025 | Commercially safe generative video and audio for professional workflows.   |
+| **ElevenLabs** | Gaming      | ElevenLabs | 2025 | Real-time voice generation and sound effects for interactive media/NPCs.   |
 
-### 3. Research Directions: V2A & Streaming
+## 🔬 Active Research Areas in Multimodal Video Generation
 
-Foundational research focuses on efficiency (streaming) and cross-modal consistency (V2A).
+Research is expanding into specialized domains to address challenges in synchronization, streaming, and physical simulation.
 
-| Paper / Model       | Category      | Author         | Year | Key Contribution                                                  |
-| :------------------ | :------------ | :------------- | :--- | :---------------------------------------------------------------- |
-| **Diff-Foley**      | **V2A**       | Luo et al.     | 2023 | Latent diffusion with Contrastive Audio-Video Pretraining (CAVP). |
-| **MMAudio**         | **V2A**       | Cheng et al.   | 2025 | Joint training with conditional synchronization module.           |
-| **CausVid**         | **Streaming** | Yin et al.     | 2025 | Causal autoregressive transformer for low-latency generation.     |
-| **MotionStream**    | **Streaming** | Shin et al.    | 2025 | Interactive streaming with sliding-window causal attention.       |
-| **StreamDiffusion** | **Streaming** | Kodaira et al. | 2025 | Real-time diffusion pipeline for interactive generation.          |
+### Video-to-Audio Generation
 
-### 4. Research Directions: Long Video & World Models
+Synthesizing temporally and semantically aligned audio from video inputs.
 
-Scaling to long-horizon generation and simulating physical environments (World Models) are critical for embodied AI and storytelling.
+| Paper / Model    | Category  | Author       | Year | Key Contribution                                                                  |
+| :--------------- | :-------- | :----------- | :--- | :-------------------------------------------------------------------------------- |
+| **Diff-Foley**   | V2A       | Luo et al.   | 2024 | Latent diffusion with Contrastive Audio-Video Pretraining (CAVP).                 |
+| **MMAudio**      | V2A       | Cheng et al. | 2025 | Joint training with conditional synchronization module for video-audio alignment. |
+| **MM-Diffusion** | Joint Gen | Ruan et al.  | 2022 | Coupled U-Net with randomly shifted attention for cross-modal consistency.        |
+| **AV-DiT**       | Joint Gen | Mo et al.    | 2025 | Adapts pretrained DiT with modality-specific adapters for joint generation.       |
+| **UniForm**      | Joint Gen | Zhao et al.  | 2025 | Unified single-tower DiT processing concatenated audio-video tokens.              |
 
-| Paper / Model              | Category          | Author          | Year | Key Contribution                                              |
-| :------------------------- | :---------------- | :-------------- | :--- | :------------------------------------------------------------ |
-| **AV-CDiT**                | **World Model**   | Wang et al.     | 2025 | Audio-visual world model for embodied AI navigation.          |
-| **Movie Gen**              | **World Model**   | Polyak et al.   | 2024 | Unified 30B video + 13B audio model for realistic simulation. |
-| **FramePack**              | **Long Video**    | Zhang et al.    | 2025 | Single-shot long video generation.                            |
-| **StreamingT2V**           | **Long Video**    | Henschel et al. | 2025 | Autoregressive conditioning for consistent long-form video.   |
-| **Visual Acoustic Fields** | **Spatial Audio** | Li et al.       | 2025 | 3DGS + Diffusion for generating 3D-consistent impact sounds.  |
-| **ViSAGe**                 | **Spatial Audio** | Kim et al.      | 2025 | Video-to-spatial audio generation.                            |
+### Streaming Multimodal Video Generation
+
+Real-time generation with strict latency constraints for live applications.
+
+| Paper / Model       | Category        | Author         | Year | Key Contribution                                                                 |
+| :------------------ | :-------------- | :------------- | :--- | :------------------------------------------------------------------------------- |
+| **CausVid**         | Causal Modeling | Yin et al.     | 2025 | Causal autoregressive transformer distilled from bidirectional DiT.              |
+| **MotionStream**    | Causal Modeling | Shin et al.    | 2025 | Interactive streaming with sliding-window causal attention and KV cache rolling. |
+| **StreamDiffusion** | Real-time       | Kodaira et al. | 2025 | Real-time diffusion pipeline optimized for interactive generation.               |
+
+### Human-Centric Multimodal Video Generation
+
+Focuses on realistic talking heads, pose animation, and customization.
+
+| Paper / Model    | Category       | Author       | Year | Key Contribution                                                   |
+| :--------------- | :------------- | :----------- | :--- | :----------------------------------------------------------------- |
+| **MultiTalk**    | Face Animation | Kong et al.  | 2025 | Maps speech signals to mouth shapes and facial motion.             |
+| **InfiniteTalk** | Face Animation | Yang et al.  | 2025 | Infinite-length talking head generation addressing temporal drift. |
+| **Wan-Animate**  | Pose Animation | Cheng et al. | 2025 | Maps target poses to realistic human videos.                       |
+| **HuMo**         | Customization  | Chen et al.  | 2025 | Controllable identity transfer for video generation.               |
+| **MMSonate**     | Customization  | Qiang et al. | 2026 | Consistent audio-visual identity control across generated content. |
+
+### Long Multimodal Video Generation
+
+Maintaining coherence over minutes to unbounded lengths.
+
+| Paper / Model    | Category    | Author          | Year | Key Contribution                                                   |
+| :--------------- | :---------- | :-------------- | :--- | :----------------------------------------------------------------- |
+| **FramePack**    | Single-Shot | Zhang et al.    | 2025 | Single-shot long video generation using packing techniques.        |
+| **StreamingT2V** | Single-Shot | Henschel et al. | 2025 | Autoregressive conditioning for consistent long-form video.        |
+| **HoloCine**     | Multi-Shot  | Meng et al.     | 2025 | Memory mechanisms for consistent narrative across video segments.  |
+| **VISTA**        | Agentic     | Long et al.     | 2025 | Iterative planning and critique for long-horizon alignment.        |
+| **AutoMV**       | Agentic     | Tang et al.     | 2025 | Coordinates agents (director, verifier) for coherent music videos. |
+
+### Interactive Multimodal Video Generation and World Models
+
+Simulating physical environments and dynamics with audio-visual coherence.
+
+| Paper / Model | Category      | Author         | Year | Key Contribution                                              |
+| :------------ | :------------ | :------------- | :--- | :------------------------------------------------------------ |
+| **AV-CDiT**   | World Model   | Wang et al.    | 2025 | Action-conditioned AV dynamics simulation for embodied AI.    |
+| **GWM-1**     | World Model   | Runway         | 2025 | General world model for explorable worlds and robotics.       |
+| **Movie Gen** | World Model   | Polyak et al.  | 2024 | Unified 30B video + 13B audio model for realistic simulation. |
+| **ELSA**      | Spatial Audio | Devnani et al. | 2024 | Spatially grounded text-audio embeddings for 3D localization. |
+| **ViSAGe**    | Spatial Audio | Kim et al.     | 2025 | Synthesizes first-order ambisonics from silent video.         |
