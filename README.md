@@ -47,13 +47,7 @@
 If you find this survey useful for your research, please cite our work:
 
 ```bibtex
-@article{author2025multimodal,
-  title={Multimodal Video Generation Models with Audio: Present and Future},
-  author={Author, First A. and Author, Second B. and Author, Third C.},
-  journal={IEEE Access},
-  year={2025},
-  doi={10.1109/ACCESS.2017.DOI}
-}
+Coming soon
 ```
 
 ---
@@ -74,6 +68,12 @@ A summary of current state-of-the-art multimodal video diffusion models discusse
 | **[LTX-2](https://huggingface.co/Lightricks/LTX-2)** $^\dagger$           | DiT + Sync Audio-Video   | Native 4K @ 50fps; open-source foundation      | Jan 2026  |
 
 > $^\dagger$ _Denotes Open-Source Models_
+
+<div align="center">
+  <img src="fig/application_merged.drawio.svg" width="90%" alt="application_merged"/>
+  <br>
+  <em>Figure 1: Overview of Multimodal Video Generation Application Scenarios, illustrating key use cases across Social Media, Production, and Gaming.</em>
+</div>
 
 ---
 
@@ -98,7 +98,7 @@ VAEs establish a probabilistic mapping between input data and a latent space. In
 <div align="center">
   <img src="fig/VAE.png" width="90%" alt="VAE Architecture"/>
   <br>
-  <em>Figure 1: Variational Autoencoder (VAE) architecture used for latent space encoding.</em>
+  <em>Figure 2: The Variational Autoencoder (VAE) architecture, which serves as the fundamental compression mechanism for encoding high-dimensional video and audio data into compact latent representations.</em>
 </div>
 
 ### 2.2 U-Net Architectures
@@ -126,7 +126,7 @@ Diffusion models reverse a gradual noising process. Early architectures relied o
 <div align="center">
   <img src="fig/Unet.drawio.svg" width="90%" alt="U-Net Architecture"/>
   <br>
-  <em>Figure 2: U-Net architecture, the foundation for early joint generation models like MM-Diffusion.</em>
+  <em>Figure 3: The U-Net architecture, featuring encoder-decoder paths with skip connections, which formed the backbone of early joint video-audio diffusion models such as MM-Diffusion.</em>
 </div>
 
 ### 2.3 Diffusion Transformer (DiT)
@@ -154,7 +154,7 @@ The current industry standard. DiT replaces U-Net with **Transformer** blocks, e
   <img src="fig/DiT.svg" width="90%" alt="DiT Architecture"/>
   <img src="fig/architecture.png" width="90%" alt="Architecture Evolution"/>
   <br>
-  <em>Figure 3: Diffusion Transformer (DiT) and the evolution towards native audio-visual synthesis with Dual-Stream Fusion.</em>
+  <em>Figure 4: The Diffusion Transformer (DiT) paradigm. Top: The standard DiT block structure. Bottom: The architectural evolution from U-Nets to Native Audio-Visual DiTs employing Dual-Stream Fusion for simultaneous generation.</em>
 </div>
 
 ### 2.4 Future: Mixture of Experts (MoE) & Autoregressive
@@ -244,7 +244,7 @@ These methods introduce additional control pathways to guide the generation proc
 <div align="center">
   <img src="fig/Post-Training-Methods.svg" width="90%" alt="Post Training Methods"/>
   <br>
-  <em>Figure 4: Taxonomy of post-training methods including PEFT, Alignment Modules, and Attention Injection mechanisms.</em>
+  <em>Figure 5: A Taxonomy of Post-Training and Alignment Methods, categorizing approaches into Training-Free Guidance, Parameter-Efficient Fine-Tuning (PEFT), Alignment Modules, and Attention Injection.</em>
 </div>
 
 ---
@@ -256,7 +256,7 @@ Evaluating joint video-audio generation is complex, requiring assessments of vid
 <div align="center">
   <img src="fig/Video-Audio GenerationEvaluation.svg" width="90%" alt="Evaluation Framework"/>
   <br>
-  <em>Figure 5: Multimodal Evaluation Common Practices.</em>
+  <em>Figure 6: A Comprehensive Multimodal Evaluation Framework, detailing Quantitative metrics (Video Quality, Audio Quality, Alignment) and Qualitative Human Evaluation protocols.</em>
 </div>
 
 ### 4.1 Quantitative Evaluation
@@ -313,7 +313,7 @@ With the emerging capabilities of joint video-audio generation models, multimoda
 <div align="center">
   <img src="fig/application.svg" width="100%" alt="Applications"/>
   <br>
-  <em>Figure: Mainstream Multimodal Video Generation Research Areas.</em>
+  <em>Figure 7: The Landscape of Applications and Active Research Areas, highlighting the expansion from Personal and Commercial applications to frontier topics like World Models and Long Video Generation.</em>
 </div>
 
 ### 5.1 Personal User Applications
