@@ -17,6 +17,8 @@
   - [2.2 U-Net Architectures](#22-u-net-architectures)
   - [2.3 Diffusion Transformer (DiT)](#23-diffusion-transformer-dit)
   - [2.4 Future: Mixture of Experts (MoE) & Autoregressive](#24-future-mixture-of-experts-moe--autoregressive)
+    - [2.4.1 Mixture of Experts (MoE)](#241-mixture-of-experts-moe)
+    - [2.4.2 Autoregressive Generation](#242-autoregressive-generation)
 - [3. ⚙️ Post-Training & Alignment](#3--post-training--alignment)
   - [3.1 Training-Free Audio-Visual Generation](#31-training-free-audio-visual-generation)
   - [3.2 Parameter-Efficient Fine-Tuning (PEFT)](#32-parameter-efficient-fine-tuning-peft)
@@ -24,6 +26,9 @@
   - [3.4 Attention Injection & ControlNet](#34-attention-injection--controlnet)
 - [4. 📊 Evaluation](#4--evaluation)
   - [4.1 Quantitative Evaluation](#41-quantitative-evaluation)
+    - [4.1.1 Video Quality Metrics](#411-video-quality-metrics)
+    - [4.1.2 Audio Quality Metrics](#412-audio-quality-metrics)
+    - [4.1.3 Audio-Visual Alignment Metrics](#413-audio-visual-alignment-metrics)
   - [4.2 Qualitative Evaluation](#42-qualitative-evaluation)
 - [5. 🚀 Applications and New Research Directions](#5--applications-and-new-research-directions)
   - [5.1 Personal User Applications](#51-personal-user-applications)
@@ -156,7 +161,7 @@ The current industry standard. DiT replaces U-Net with **Transformer** blocks, e
 
 To scale to billions of parameters efficiently and unify modalities, architectures are evolving towards **Mixture of Experts (MoE)** and **Autoregressive (AR)** paradigms.
 
-#### Mixture of Experts (MoE)
+#### 2.4.1 Mixture of Experts (MoE)
 
 MoE introduces sparse activation, where only a subset of parameters (experts) is activated for a given input.
 
@@ -176,7 +181,7 @@ MoE introduces sparse activation, where only a subset of parameters (experts) is
 | **SegMoE**                             | **Token MoE**        | Ortigossa et al. | 2026 | Multi-resolution segment-wise MoE for efficient generation.     |
 | **Race-DiT**                           | **Token MoE**        | Yuan et al.      | 2025 | Flexible routing for improved sample quality and reduced FLOPs. |
 
-#### Autoregressive Generation
+#### 2.4.2 Autoregressive Generation
 
 Autoregressive (AR) models process video and audio as sequential tokens, enabling unified understanding and generation in a single pass. While diffusion currently dominates high-fidelity generation, AR offers a path to unified multimodal "Any-to-Any" models.
 
@@ -258,7 +263,7 @@ Evaluating joint video-audio generation is complex, requiring assessments of vid
 
 Quantitative evaluation assesses each modality independently as well as their cross-modal alignment.
 
-#### Video Quality Metrics
+#### 4.1.1 Video Quality Metrics
 
 | Metric / Benchmark               | Category         | Author             | Year | Key Contribution                                                                     |
 | :------------------------------- | :--------------- | :----------------- | :--- | :----------------------------------------------------------------------------------- |
@@ -268,7 +273,7 @@ Quantitative evaluation assesses each modality independently as well as their cr
 | **VBench++**                     | **Benchmark**    | Huang et al.       | 2025 | Extends VBench to image-to-video and model trustworthiness assessment.               |
 | **VBench-2.0**                   | **Benchmark**    | Zheng et al.       | 2025 | Introduces physics-based realism, commonsense reasoning, and human fidelity.         |
 
-#### Audio Quality Metrics
+#### 4.1.2 Audio Quality Metrics
 
 | Metric / Benchmark               | Category         | Author          | Year | Key Contribution                                                             |
 | :------------------------------- | :--------------- | :-------------- | :--- | :--------------------------------------------------------------------------- |
@@ -279,7 +284,7 @@ Quantitative evaluation assesses each modality independently as well as their cr
 | **Audiobox Aesthetics**          | **Quality**      | Vyas et al.     | 2023 | Decomposes quality into axes like Production Quality and Content Enjoyment.  |
 | **MAD**                          | **Distribution** | -               | -    | MAUVE Audio Divergence, a non-Gaussian alternative to FAD.                   |
 
-#### Audio-Visual Alignment Metrics
+#### 4.1.3 Audio-Visual Alignment Metrics
 
 | Metric / Benchmark   | Category         | Author         | Year | Key Contribution                                                           |
 | :------------------- | :--------------- | :------------- | :--- | :------------------------------------------------------------------------- |
