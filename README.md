@@ -18,6 +18,10 @@
   - [3. Diffusion Transformer (DiT)](#3-diffusion-transformer-dit)
   - [4. Future: Mixture of Experts (MoE)](#4-future-mixture-of-experts-moe)
 - [⚙️ Post-Training & Alignment](#-post-training--alignment)
+  - [1. Training-Free Audio-Visual Generation](#1-training-free-audio-visual-generation)
+  - [2. Parameter-Efficient Fine-Tuning (PEFT)](#2-parameter-efficient-fine-tuning-peft)
+  - [3. Audio-Visual Alignment Modules](#3-audio-visual-alignment-modules)
+  - [4. Attention Injection & ControlNet](#4-attention-injection--controlnet)
 - [📊 Evaluation](#-evaluation)
 - [🚀 Applications & Research Directions](#-applications--research-directions)
   - [Video-to-Audio (V2A)](#video-to-audio-v2a)
@@ -152,28 +156,53 @@ To scale to billions of parameters efficiently, **Mixture of Experts (MoE)** arc
 
 ## ⚙️ Post-Training & Alignment
 
-Pre-trained base models often require adaptation for precise audio-visual synchronization. Key techniques include:
+While large-scale pretraining establishes the foundation for multimodal generation, post-training techniques are essential for adapting models to specific tasks, improving audio-visual alignment, and enabling fine-grained control. These methods allow for efficient adaptation without the massive computational cost of full retraining.
 
-### 1. Parameter-Efficient Fine-Tuning (PEFT)
+### 1. Training-Free Audio-Visual Generation
 
-- **LoRA (Low-Rank Adaptation):** Injects lightweight trainable matrices into attention layers (e.g., **AV-DiT**).
-- **Adapters:** Semantic adapters for conditioning audio on video features; Temporal adapters for precise timestamp control (e.g., **FoleyCrafter**).
+Training-free methods leverage the inherent capabilities of pretrained models (e.g., attention mechanisms) to guide generation. These approaches often manipulate attention maps or use optimization-based guidance during inference to enforce synchronization between audio and video modalities.
 
-### 2. Audio-Visual Alignment Modules
+| Paper / Model           | Category               | Author      | Year | Key Contribution                                                                                                    |
+| :---------------------- | :--------------------- | :---------- | :--- | :------------------------------------------------------------------------------------------------------------------ |
+| **Diff-Foley**          | **Optimization**       | Luo et al.  | 2023 | Uses Contrastive Audio-Video Pretraining (CAVP) to guide latent diffusion for synchronized audio generation.        |
+| **Seeing and Hearing**  | **Attention Guidance** | Xing et al. | 2024 | Utilizes a pretrained ImageBind encoder to guide generation, ensuring semantic consistency between modalities.      |
+| **Guidance-Based Sync** | **Sampling Guidance**  | -           | 2025 | Modifies flow matching or diffusion loss during sampling to bias generation toward audio-aligned temporal patterns. |
 
-- **Synchformer:** Self-supervised audio-visual desynchronization detector for millisecond-level alignment.
-- **ControlNet-Based Methods:**
-  - **Temporal ControlNet:** Enforces alignment using timestamp masks.
-  - **Multi-Stream Control:** Separates speech, music, and effects for fine-grained control (e.g., **MTV**).
+### 2. Parameter-Efficient Fine-Tuning (PEFT)
 
-### 3. Training-Free Methods
+PEFT techniques adapt large pretrained models to new domains or tasks by updating only a small fraction of parameters. This is crucial for multimodal generation where full fine-tuning is prohibitively expensive.
 
-- **Audio-Visual Guidance:** Manipulates attention scores during inference to steer video generation towards audio synchronization without weight updates.
+| Paper / Model      | Category             | Author      | Year | Key Contribution                                                                                                                |
+| :----------------- | :------------------- | :---------- | :--- | :------------------------------------------------------------------------------------------------------------------------------ |
+| **LoRA**           | **Adaptation**       | Hu et al.   | 2022 | Low-Rank Adaptation: Injects trainable low-rank matrices into attention layers, reducing trainable parameters by up to 10,000x. |
+| **AV-DiT**         | **PEFT Application** | Wang et al. | 2024 | Applies LoRA to audio-visual DiT models, enabling efficient adaptation for synchronized generation tasks.                       |
+| **Adapter Layers** | **Adaptation**       | -           | -    | Inserts lightweight adapter modules between transformer blocks to learn modality-specific features.                             |
+
+### 3. Audio-Visual Alignment Modules
+
+Specialized modules designed to explicitly model and enforce synchronization between audio waveforms and visual motion. These are often plug-and-play components added to existing backbones.
+
+| Paper / Model    | Category               | Author       | Year | Key Contribution                                                                                                    |
+| :--------------- | :--------------------- | :----------- | :--- | :------------------------------------------------------------------------------------------------------------------ |
+| **FoleyCrafter** | **Parallel Attention** | Zhang et al. | 2024 | Integrates parallel cross-attention layers alongside text-based attention to condition audio on video features.     |
+| **Syncphony**    | **Cross-Attention**    | Song et al.  | 2025 | Injects audio features via cross-attention with RoPE to enable precise audio-motion alignment on DiT architectures. |
+| **Synchformer**  | **Sync Detection**     | Yang et al.  | 2024 | A hierarchical transformer for detecting audio-visual desynchronization at millisecond-level precision.             |
+| **AuTo-Video**   | **Temporal Loss**      | Li et al.    | 2025 | Introduces onset-aware temporal loss functions to penalize misalignment between audio beats and visual motion.      |
+
+### 4. Attention Injection & ControlNet
+
+These methods introduce additional control pathways to guide the generation process, allowing for spatial and temporal structural control based on external signals (e.g., depth maps, pose, or audio amplitude).
+
+| Paper / Model           | Category               | Author       | Year | Key Contribution                                                                                                      |
+| :---------------------- | :--------------------- | :----------- | :--- | :-------------------------------------------------------------------------------------------------------------------- |
+| **ControlNet**          | **Structural Control** | Zhang et al. | 2023 | Adds trainable copies of encoder blocks to inject spatial conditions (edges, depth) into diffusion models.            |
+| **Temporal ControlNet** | **Video Control**      | Wang et al.  | 2024 | Extends ControlNet to the temporal dimension, using timestamp masks to align video frames with specific audio events. |
+| **MTV**                 | **Multi-Stream**       | -            | 2025 | Multi-Stream Temporal ControlNet: Uses dedicated encoders for audio, video, and text to achieve fine-grained control. |
 
 <div align="center">
   <img src="fig/Post-Training-Methods.svg" width="90%" alt="Post Training Methods"/>
   <br>
-  <em>Figure 4: Common post-training methods including PEFT, Alignment Modules, and Attention Injection.</em>
+  <em>Figure 4: Taxonomy of post-training methods including PEFT, Alignment Modules, and Attention Injection mechanisms.</em>
 </div>
 
 ---
