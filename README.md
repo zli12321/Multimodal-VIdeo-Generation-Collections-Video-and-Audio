@@ -10,32 +10,34 @@
 
 ## 📖 Table of Contents
 
-- [📚 Citation](#-citation)
-- [✨ Representative Models](#-representative-models)
-- [🏗️ Architectures & Evolution](#-architectures--evolution)
-  - [1. Variational Autoencoder (VAE)](#1-variational-autoencoder-vae)
-  - [2. U-Net Architectures](#2-u-net-architectures)
-  - [3. Diffusion Transformer (DiT)](#3-diffusion-transformer-dit)
-  - [4. Future: Mixture of Experts (MoE) & Autoregressive](#4-future-mixture-of-experts-moe--autoregressive)
-- [⚙️ Post-Training & Alignment](#-post-training--alignment)
-  - [1. Training-Free Audio-Visual Generation](#1-training-free-audio-visual-generation)
-  - [2. Parameter-Efficient Fine-Tuning (PEFT)](#2-parameter-efficient-fine-tuning-peft)
-  - [3. Audio-Visual Alignment Modules](#3-audio-visual-alignment-modules)
-  - [4. Attention Injection & ControlNet](#4-attention-injection--controlnet)
-- [📊 Evaluation](#-evaluation)
-- [🚀 Applications and New Research Directions](#-applications-and-new-research-directions)
-  - [Personal User Applications](#personal-user-applications)
-  - [Commercial Applications of Video Generation](#commercial-applications-of-video-generation)
-- [🔬 Active Research Areas in Multimodal Video Generation](#-active-research-areas-in-multimodal-video-generation)
-  - [Video-to-Audio Generation](#video-to-audio-generation)
-  - [Streaming Multimodal Video Generation](#streaming-multimodal-video-generation)
-  - [Human-Centric Multimodal Video Generation](#human-centric-multimodal-video-generation)
-  - [Long Multimodal Video Generation](#long-multimodal-video-generation)
-  - [Interactive Multimodal Video Generation and World Models](#interactive-multimodal-video-generation-and-world-models)
+- [0. 📚 Citation](#0--citation)
+- [1. ✨ Representative Models](#1--representative-models)
+- [2. 🏗️ Architectures & Evolution](#2--architectures--evolution)
+  - [2.1 Variational Autoencoder (VAE)](#21-variational-autoencoder-vae)
+  - [2.2 U-Net Architectures](#22-u-net-architectures)
+  - [2.3 Diffusion Transformer (DiT)](#23-diffusion-transformer-dit)
+  - [2.4 Future: Mixture of Experts (MoE) & Autoregressive](#24-future-mixture-of-experts-moe--autoregressive)
+- [3. ⚙️ Post-Training & Alignment](#3--post-training--alignment)
+  - [3.1 Training-Free Audio-Visual Generation](#31-training-free-audio-visual-generation)
+  - [3.2 Parameter-Efficient Fine-Tuning (PEFT)](#32-parameter-efficient-fine-tuning-peft)
+  - [3.3 Audio-Visual Alignment Modules](#33-audio-visual-alignment-modules)
+  - [3.4 Attention Injection & ControlNet](#34-attention-injection--controlnet)
+- [4. 📊 Evaluation](#4--evaluation)
+  - [4.1 Quantitative Evaluation](#41-quantitative-evaluation)
+  - [4.2 Qualitative Evaluation](#42-qualitative-evaluation)
+- [5. 🚀 Applications and New Research Directions](#5--applications-and-new-research-directions)
+  - [5.1 Personal User Applications](#51-personal-user-applications)
+  - [5.2 Commercial Applications of Video Generation](#52-commercial-applications-of-video-generation)
+- [6. 🔬 Active Research Areas in Multimodal Video Generation](#6--active-research-areas-in-multimodal-video-generation)
+  - [6.1 Video-to-Audio Generation](#61-video-to-audio-generation)
+  - [6.2 Streaming Multimodal Video Generation](#62-streaming-multimodal-video-generation)
+  - [6.3 Human-Centric Multimodal Video Generation](#63-human-centric-multimodal-video-generation)
+  - [6.4 Long Multimodal Video Generation](#64-long-multimodal-video-generation)
+  - [6.5 Interactive Multimodal Video Generation and World Models](#65-interactive-multimodal-video-generation-and-world-models)
 
 ---
 
-## 📚 Citation
+## 0. 📚 Citation
 
 If you find this survey useful for your research, please cite our work:
 
@@ -51,7 +53,7 @@ If you find this survey useful for your research, please cite our work:
 
 ---
 
-## ✨ Representative Models
+## 1. ✨ Representative Models
 
 A summary of current state-of-the-art multimodal video diffusion models discussed in our survey.
 
@@ -70,11 +72,11 @@ A summary of current state-of-the-art multimodal video diffusion models discusse
 
 ---
 
-## 🏗️ Architectures & Evolution
+## 2. 🏗️ Architectures & Evolution
 
 Multimodal video generation requires synchronizing distinct modalities (visual frames and audio waveforms) within a unified architecture. We trace the evolution from foundational VAEs to modern DiT and MoE architectures. Below is a comprehensive categorization of the models and papers referenced in our survey.
 
-### 1. Variational Autoencoder (VAE)
+### 2.1 Variational Autoencoder (VAE)
 
 VAEs establish a probabilistic mapping between input data and a latent space. In modern multimodal systems, they primarily serve as **compression mechanisms** (Video VAE & Audio VAE) to transform high-dimensional raw data into compact latent representations.
 
@@ -94,7 +96,7 @@ VAEs establish a probabilistic mapping between input data and a latent space. In
   <em>Figure 1: Variational Autoencoder (VAE) architecture used for latent space encoding.</em>
 </div>
 
-### 2. U-Net Architectures
+### 2.2 U-Net Architectures
 
 Diffusion models reverse a gradual noising process. Early architectures relied on **U-Nets** with skip connections. While foundational, the locality of convolutional operations limits their scalability for long-sequence multimodal tasks.
 
@@ -122,7 +124,7 @@ Diffusion models reverse a gradual noising process. Early architectures relied o
   <em>Figure 2: U-Net architecture, the foundation for early joint generation models like MM-Diffusion.</em>
 </div>
 
-### 3. Diffusion Transformer (DiT)
+### 2.3 Diffusion Transformer (DiT)
 
 The current industry standard. DiT replaces U-Net with **Transformer** blocks, enabling better scalability and global spatiotemporal reasoning.
 
@@ -150,7 +152,7 @@ The current industry standard. DiT replaces U-Net with **Transformer** blocks, e
   <em>Figure 3: Diffusion Transformer (DiT) and the evolution towards native audio-visual synthesis with Dual-Stream Fusion.</em>
 </div>
 
-### 4. Future: Mixture of Experts (MoE) & Autoregressive
+### 2.4 Future: Mixture of Experts (MoE) & Autoregressive
 
 To scale to billions of parameters efficiently and unify modalities, architectures are evolving towards **Mixture of Experts (MoE)** and **Autoregressive (AR)** paradigms.
 
@@ -189,11 +191,11 @@ Autoregressive (AR) models process video and audio as sequential tokens, enablin
 
 ---
 
-## ⚙️ Post-Training & Alignment
+## 3. ⚙️ Post-Training & Alignment
 
 While large-scale pretraining establishes the foundation for multimodal generation, post-training techniques are essential for adapting models to specific tasks, improving audio-visual alignment, and enabling fine-grained control. These methods allow for efficient adaptation without the massive computational cost of full retraining.
 
-### 1. Training-Free Audio-Visual Generation
+### 3.1 Training-Free Audio-Visual Generation
 
 Training-free methods leverage the inherent capabilities of pretrained models (e.g., attention mechanisms) to guide generation. These approaches often manipulate attention maps or use optimization-based guidance during inference to enforce synchronization between audio and video modalities.
 
@@ -203,7 +205,7 @@ Training-free methods leverage the inherent capabilities of pretrained models (e
 | **Seeing and Hearing**  | **Attention Guidance** | Xing et al. | 2024 | Utilizes a pretrained ImageBind encoder to guide generation, ensuring semantic consistency between modalities.      |
 | **Guidance-Based Sync** | **Sampling Guidance**  | -           | 2025 | Modifies flow matching or diffusion loss during sampling to bias generation toward audio-aligned temporal patterns. |
 
-### 2. Parameter-Efficient Fine-Tuning (PEFT)
+### 3.2 Parameter-Efficient Fine-Tuning (PEFT)
 
 PEFT techniques adapt large pretrained models to new domains or tasks by updating only a small fraction of parameters. This is crucial for multimodal generation where full fine-tuning is prohibitively expensive.
 
@@ -213,7 +215,7 @@ PEFT techniques adapt large pretrained models to new domains or tasks by updatin
 | **AV-DiT**         | **PEFT Application** | Wang et al. | 2024 | Applies LoRA to audio-visual DiT models, enabling efficient adaptation for synchronized generation tasks.                       |
 | **Adapter Layers** | **Adaptation**       | -           | -    | Inserts lightweight adapter modules between transformer blocks to learn modality-specific features.                             |
 
-### 3. Audio-Visual Alignment Modules
+### 3.3 Audio-Visual Alignment Modules
 
 Specialized modules designed to explicitly model and enforce synchronization between audio waveforms and visual motion. These are often plug-and-play components added to existing backbones.
 
@@ -224,7 +226,7 @@ Specialized modules designed to explicitly model and enforce synchronization bet
 | **Synchformer**  | **Sync Detection**     | Yang et al.  | 2024 | A hierarchical transformer for detecting audio-visual desynchronization at millisecond-level precision.             |
 | **AuTo-Video**   | **Temporal Loss**      | Li et al.    | 2025 | Introduces onset-aware temporal loss functions to penalize misalignment between audio beats and visual motion.      |
 
-### 4. Attention Injection & ControlNet
+### 3.4 Attention Injection & ControlNet
 
 These methods introduce additional control pathways to guide the generation process, allowing for spatial and temporal structural control based on external signals (e.g., depth maps, pose, or audio amplitude).
 
@@ -242,7 +244,7 @@ These methods introduce additional control pathways to guide the generation proc
 
 ---
 
-## 📊 Evaluation
+## 4. 📊 Evaluation
 
 Evaluating joint video-audio generation is complex, requiring assessments of video quality, audio quality, and cross-modal alignment. Common practices involve both quantitative metrics and qualitative human evaluation.
 
@@ -252,7 +254,7 @@ Evaluating joint video-audio generation is complex, requiring assessments of vid
   <em>Figure 5: Multimodal Evaluation Common Practices.</em>
 </div>
 
-### 1. Quantitative Evaluation
+### 4.1 Quantitative Evaluation
 
 Quantitative evaluation assesses each modality independently as well as their cross-modal alignment.
 
@@ -287,7 +289,7 @@ Quantitative evaluation assesses each modality independently as well as their cr
 | **FAVD**             | **Distribution** | Kilgour et al. | 2019 | Extends Fréchet distance to joint audio-visual features.                   |
 | **Spatial AV-Align** | **Spatial**      | Yariv et al.   | 2023 | Evaluates spatial coherence using object detection and sound localization. |
 
-### 2. Qualitative Evaluation
+### 4.2 Qualitative Evaluation
 
 Human evaluation remains essential for capturing perceptual synchronization and semantic coherence.
 
@@ -299,7 +301,7 @@ Human evaluation remains essential for capturing perceptual synchronization and 
 
 ---
 
-## 🚀 Applications and New Research Directions
+## 5. 🚀 Applications and New Research Directions
 
 With the emerging capabilities of joint video-audio generation models, multimodal content creation is entering a new phase where visual and auditory elements are produced synchronously. This shift moves beyond silent video to **native audiovisual synthesis**, driven by proprietary models like **Sora 2**, **Veo 3.1**, and **Wan 2.6**.
 
@@ -309,7 +311,7 @@ With the emerging capabilities of joint video-audio generation models, multimoda
   <em>Figure: Mainstream Multimodal Video Generation Research Areas.</em>
 </div>
 
-### Personal User Applications
+### 5.1 Personal User Applications
 
 Personal applications focus on social media content creation, entertainment, and personalized avatar interaction.
 
@@ -322,7 +324,7 @@ Personal applications focus on social media content creation, entertainment, and
 | **EchoMimic**   | Avatar       | Chen et al. | 2024 | Identity-preserving audio-driven avatar generation.                                     |
 | **OmniHuman-1** | Avatar       | Lin et al.  | 2025 | Full-body audio-driven animation with expressive gestures and singing.                  |
 
-### Commercial Applications of Video Generation
+### 5.2 Commercial Applications of Video Generation
 
 Commercial adoption spans advertising, film production, and gaming, leveraging native audio to reduce post-production overhead.
 
@@ -332,11 +334,11 @@ Commercial adoption spans advertising, film production, and gaming, leveraging n
 | **Firefly**    | Production  | Adobe      | 2025 | Commercially safe generative video and audio for professional workflows.   |
 | **ElevenLabs** | Gaming      | ElevenLabs | 2025 | Real-time voice generation and sound effects for interactive media/NPCs.   |
 
-## 🔬 Active Research Areas in Multimodal Video Generation
+## 6. 🔬 Active Research Areas in Multimodal Video Generation
 
 Research is expanding into specialized domains to address challenges in synchronization, streaming, and physical simulation.
 
-### Video-to-Audio Generation
+### 6.1 Video-to-Audio Generation
 
 Synthesizing temporally and semantically aligned audio from video inputs.
 
@@ -348,7 +350,7 @@ Synthesizing temporally and semantically aligned audio from video inputs.
 | **AV-DiT**       | Joint Gen | Mo et al.    | 2025 | Adapts pretrained DiT with modality-specific adapters for joint generation.       |
 | **UniForm**      | Joint Gen | Zhao et al.  | 2025 | Unified single-tower DiT processing concatenated audio-video tokens.              |
 
-### Streaming Multimodal Video Generation
+### 6.2 Streaming Multimodal Video Generation
 
 Real-time generation with strict latency constraints for live applications.
 
@@ -358,7 +360,7 @@ Real-time generation with strict latency constraints for live applications.
 | **MotionStream**    | Causal Modeling | Shin et al.    | 2025 | Interactive streaming with sliding-window causal attention and KV cache rolling. |
 | **StreamDiffusion** | Real-time       | Kodaira et al. | 2025 | Real-time diffusion pipeline optimized for interactive generation.               |
 
-### Human-Centric Multimodal Video Generation
+### 6.3 Human-Centric Multimodal Video Generation
 
 Focuses on realistic talking heads, pose animation, and customization.
 
@@ -370,7 +372,7 @@ Focuses on realistic talking heads, pose animation, and customization.
 | **HuMo**         | Customization  | Chen et al.  | 2025 | Controllable identity transfer for video generation.               |
 | **MMSonate**     | Customization  | Qiang et al. | 2026 | Consistent audio-visual identity control across generated content. |
 
-### Long Multimodal Video Generation
+### 6.4 Long Multimodal Video Generation
 
 Maintaining coherence over minutes to unbounded lengths.
 
@@ -382,7 +384,7 @@ Maintaining coherence over minutes to unbounded lengths.
 | **VISTA**        | Agentic     | Long et al.     | 2025 | Iterative planning and critique for long-horizon alignment.        |
 | **AutoMV**       | Agentic     | Tang et al.     | 2025 | Coordinates agents (director, verifier) for coherent music videos. |
 
-### Interactive Multimodal Video Generation and World Models
+### 6.5 Interactive Multimodal Video Generation and World Models
 
 Simulating physical environments and dynamics with audio-visual coherence.
 
