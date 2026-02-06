@@ -39,7 +39,10 @@
   - [6.3 Human-Centric Multimodal Video Generation](#63-human-centric-multimodal-video-generation)
   - [6.4 Long Multimodal Video Generation](#64-long-multimodal-video-generation)
   - [6.5 Interactive Multimodal Video Generation and World Models](#65-interactive-multimodal-video-generation-and-world-models)
-- [7. ⚠️ Limitations & Challenges](#7--limitations--challenges)
+- [7. ⚠️ Limitations & Challenges](#7-%EF%B8%8F-limitations--challenges)
+  - [7.1 Evaluation](#71-evaluation)
+  - [7.2 Model Efficient Deployment and Latency](#72-model-efficient-deployment-and-latency)
+  - [7.3 Modality Fusion and Unified Generation](#73-modality-fusion-and-unified-generation)
 
 ---
 
@@ -477,10 +480,10 @@ Despite rapid advancements, significant hurdles remain in achieving seamless, ph
 
 ### 7.2 Model Efficient Deployment and Latency
 
-| Paper / Model                                            | Challenge             | Year | Key Contribution                                                                        |
-| :------------------------------------------------------- | :-------------------- | :--- | :-------------------------------------------------------------------------------------- |
-| [**LiveTalk**](https://arxiv.org/abs/2512.23576)         | Real-Time Interaction | 2025 | Real-time multimodal interactive video diffusion via improved on-policy distillation.   |
-| [**MIDAS**](https://arxiv.org/abs/2508.19320)            | Real-Time Interaction | 2025 | Multimodal interactive digital-human synthesis via real-time autoregressive generation. |
+| Paper / Model                                    | Challenge             | Year | Key Contribution                                                                        |
+| :----------------------------------------------- | :-------------------- | :--- | :-------------------------------------------------------------------------------------- |
+| [**LiveTalk**](https://arxiv.org/abs/2512.23576) | Real-Time Interaction | 2025 | Real-time multimodal interactive video diffusion via improved on-policy distillation.   |
+| [**MIDAS**](https://arxiv.org/abs/2508.19320)    | Real-Time Interaction | 2025 | Multimodal interactive digital-human synthesis via real-time autoregressive generation. |
 
 ### 7.3 Modality Fusion and Unified Generation
 
