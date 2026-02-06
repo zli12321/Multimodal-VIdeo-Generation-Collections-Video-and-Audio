@@ -442,25 +442,25 @@ Focuses on realistic talking heads, pose animation, and customization.
 
 Maintaining coherence over minutes to unbounded lengths.
 
-| Paper / Model    | Category    | Year | Key Contribution                                                   |
-| :--------------- | :---------- | :--- | :----------------------------------------------------------------- |
-| **FramePack**    | Single-Shot | 2025 | Single-shot long video generation using packing techniques.        |
-| **StreamingT2V** | Single-Shot | 2025 | Autoregressive conditioning for consistent long-form video.        |
-| **HoloCine**     | Multi-Shot  | 2025 | Memory mechanisms for consistent narrative across video segments.  |
-| **VISTA**        | Agentic     | 2025 | Iterative planning and critique for long-horizon alignment.        |
-| **AutoMV**       | Agentic     | 2025 | Coordinates agents (director, verifier) for coherent music videos. |
+| Paper / Model                                            | Category    | Year | Key Contribution                                                   |
+| :------------------------------------------------------- | :---------- | :--- | :----------------------------------------------------------------- |
+| [**FramePack**](https://github.com/lllyasviel/FramePack) | Single-Shot | 2025 | Single-shot long video generation using packing techniques.        |
+| [**StreamingT2V**](https://streamingt2v.github.io/)      | Single-Shot | 2025 | Autoregressive conditioning for consistent long-form video.        |
+| [**HoloCine**](https://holo-cine.github.io/)             | Multi-Shot  | 2025 | Memory mechanisms for consistent narrative across video segments.  |
+| [**VISTA**](https://g-vista.github.io/)                  | Agentic     | 2025 | Iterative planning and critique for long-horizon alignment.        |
+| [**AutoMV**](https://arxiv.org/abs/2512.12196)           | Agentic     | 2025 | Coordinates agents (director, verifier) for coherent music videos. |
 
 ### 6.5 Interactive Multimodal Video Generation and World Models
 
 Simulating physical environments and dynamics with audio-visual coherence.
 
-| Paper / Model | Category      | Year | Key Contribution                                              |
-| :------------ | :------------ | :--- | :------------------------------------------------------------ |
-| **AV-CDiT**   | World Model   | 2025 | Action-conditioned AV dynamics simulation for embodied AI.    |
-| **GWM-1**     | World Model   | 2025 | General world model for explorable worlds and robotics.       |
-| **Movie Gen** | World Model   | 2024 | Unified 30B video + 13B audio model for realistic simulation. |
-| **ELSA**      | Spatial Audio | 2024 | Spatially grounded text-audio embeddings for 3D localization. |
-| **ViSAGe**    | Spatial Audio | 2025 | Synthesizes first-order ambisonics from silent video.         |
+| Paper / Model                                                       | Category      | Year | Key Contribution                                              |
+| :------------------------------------------------------------------ | :------------ | :--- | :------------------------------------------------------------ |
+| [**AV-CDiT**](https://arxiv.org/abs/2512.00883)                     | World Model   | 2025 | Action-conditioned AV dynamics simulation for embodied AI.    |
+| [**GWM-1**](https://runwayml.com/research/introducing-runway-gwm-1) | World Model   | 2025 | General world model for explorable worlds and robotics.       |
+| [**Movie Gen**](https://arxiv.org/abs/2410.13720)                   | World Model   | 2024 | Unified 30B video + 13B audio model for realistic simulation. |
+| [**ELSA**](https://arxiv.org/abs/2409.11369)                        | Spatial Audio | 2024 | Spatially grounded text-audio embeddings for 3D localization. |
+| [**ViSAGe**](https://jaeyeonkim99.github.io/visage/)                | Spatial Audio | 2025 | Synthesizes first-order ambisonics from silent video.         |
 
 ---
 
