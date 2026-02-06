@@ -470,17 +470,16 @@ Despite rapid advancements, significant hurdles remain in achieving seamless, ph
 
 ### 7.1 Evaluation
 
-| Paper / Model                                      | Challenge           | Year | Key Contribution                                                                  |
-| :------------------------------------------------- | :------------------ | :--- | :-------------------------------------------------------------------------------- |
-| [**KAD**](https://arxiv.org/abs/2502.15602)        | Metric Limitations  | 2025 | Reference-free metric for evaluating audio generation quality and diversity.      |
-| [**VideoHallu**](https://arxiv.org/abs/2505.01481) | Perceptual Mismatch | 2025 | Comprehensive benchmark for evaluating and mitigating multi-modal hallucinations. |
+| Paper / Model                                      | Challenge           | Year | Key Contribution                                                             |
+| :------------------------------------------------- | :------------------ | :--- | :--------------------------------------------------------------------------- |
+| [**FAD**](https://arxiv.org/abs/2502.15602)        | Metric Limitations  | 2025 | Reference-free metric for evaluating audio generation quality and diversity. |
+| [**AudioLDM**](https://arxiv.org/abs/2301.12503)   | **Audio-Visual**    | 2023 | Text-to-audio generation using LDMs and CLAP.                                |
+| [**VABench**](https://arxiv.org/html/2512.09299v1) | Perceptual Mismatch | 2025 | Comprehensive Benchmark for Audio-Video Generation.                          |
 
 ### 7.2 Model Efficient Deployment and Latency
 
 | Paper / Model                                            | Challenge             | Year | Key Contribution                                                                        |
 | :------------------------------------------------------- | :-------------------- | :--- | :-------------------------------------------------------------------------------------- |
-| [**On-device Sora**](https://arxiv.org/abs/2502.04363)   | Deployment Efficiency | 2025 | Enabling training-free diffusion-based text-to-video generation on mobile devices.      |
-| [**One-Minute Video**](https://arxiv.org/abs/2504.05298) | Deployment Efficiency | 2025 | One-minute video generation with test-time training for long-context coherence.         |
 | [**LiveTalk**](https://arxiv.org/abs/2512.23576)         | Real-Time Interaction | 2025 | Real-time multimodal interactive video diffusion via improved on-policy distillation.   |
 | [**MIDAS**](https://arxiv.org/abs/2508.19320)            | Real-Time Interaction | 2025 | Multimodal interactive digital-human synthesis via real-time autoregressive generation. |
 
@@ -489,12 +488,5 @@ Despite rapid advancements, significant hurdles remain in achieving seamless, ph
 | Paper / Model                                                    | Challenge              | Year | Key Contribution                                                                       |
 | :--------------------------------------------------------------- | :--------------------- | :--- | :------------------------------------------------------------------------------------- |
 | [**Unified Multimodal Model**](https://arxiv.org/abs/2509.09666) | Unified Generation     | 2025 | Unified multimodal model as auto-encoder for synchronous generation and understanding. |
-| [**UniTok**](https://neurips.cc/virtual/2025/poster/116864)      | Unified Tokenization   | 2025 | Unified tokenizer for visual generation and understanding to reduce interference.      |
 | [**Balanced Multimodal**](https://arxiv.org/abs/2509.02281)      | Modality Hallucination | 2025 | Unidirectional dynamic interaction perspective to mitigate modality hallucination.     |
-| [**WorldModelBench**](https://arxiv.org/abs/2502.20694)          | Physical Violations    | 2025 | Evaluating video generation models as world models focusing on physical laws.          |
-| [**Think Before You Diffuse**](https://arxiv.org/abs/2505.21653) | Physical Violations    | 2025 | LLM-guided physics-aware video generation to improve physical plausibility.            |
-| [**VDAWorld**](https://arxiv.org/abs/2512.11061)                 | Audio-Visual Causality | 2025 | VLM-directed abstraction and simulation for world modeling.                            |
-| [**MASS**](https://arxiv.org/abs/2511.18373)                     | Audio-Visual Causality | 2025 | Motion-aware spatial-temporal grounding for physics reasoning.                         |
-| [**Yan**](https://arxiv.org/abs/2508.08601)                      | Long-Horizon Coherence | 2025 | Foundational interactive video generation with consistent long-horizon narrative.      |
-| [**StoryAgent**](https://arxiv.org/abs/2411.04925)               | Long-Horizon Coherence | 2024 | Multi-agent collaboration for customized storytelling video generation.                |
-| [**MoVieDrive**](https://arxiv.org/abs/2508.14327)               | Long-Horizon Coherence | 2025 | Multi-modal multi-view urban scene video generation.                                   |
+| [**UniTok**](https://neurips.cc/virtual/2025/poster/116864)      | Unified Tokenization   | 2025 | Unified tokenizer for visual generation and understanding to reduce interference.      |
