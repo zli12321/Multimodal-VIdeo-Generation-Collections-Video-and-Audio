@@ -473,7 +473,6 @@ Despite rapid advancements, significant hurdles remain in achieving seamless, ph
 | Paper / Model                                      | Challenge           | Year | Key Contribution                                                             |
 | :------------------------------------------------- | :------------------ | :--- | :--------------------------------------------------------------------------- |
 | [**FAD**](https://arxiv.org/abs/2502.15602)        | Metric Limitations  | 2025 | Reference-free metric for evaluating audio generation quality and diversity. |
-| [**AudioLDM**](https://arxiv.org/abs/2301.12503)   | **Audio-Visual**    | 2023 | Text-to-audio generation using LDMs and CLAP.                                |
 | [**VABench**](https://arxiv.org/html/2512.09299v1) | Perceptual Mismatch | 2025 | Comprehensive Benchmark for Audio-Video Generation.                          |
 
 ### 7.2 Model Efficient Deployment and Latency
