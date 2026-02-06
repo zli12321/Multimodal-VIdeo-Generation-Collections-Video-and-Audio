@@ -39,6 +39,7 @@
   - [6.3 Human-Centric Multimodal Video Generation](#63-human-centric-multimodal-video-generation)
   - [6.4 Long Multimodal Video Generation](#64-long-multimodal-video-generation)
   - [6.5 Interactive Multimodal Video Generation and World Models](#65-interactive-multimodal-video-generation-and-world-models)
+- [7. ⚠️ Limitations & Challenges](#7--limitations--challenges)
 
 ---
 
@@ -460,3 +461,31 @@ Simulating physical environments and dynamics with audio-visual coherence.
 | **Movie Gen** | World Model   | 2024 | Unified 30B video + 13B audio model for realistic simulation. |
 | **ELSA**      | Spatial Audio | 2024 | Spatially grounded text-audio embeddings for 3D localization. |
 | **ViSAGe**    | Spatial Audio | 2025 | Synthesizes first-order ambisonics from silent video.         |
+
+---
+
+## 7. ⚠️ Limitations & Challenges
+
+Despite rapid advancements, significant hurdles remain in achieving seamless, physically plausible, and efficient multimodal video generation.
+
+### 7.1 Evaluation Gaps
+
+- **Lack of Universal Metrics**: No standardized metric exists for audio-visual synchrony or semantic alignment, leading to incomparable results across papers.
+- **Metric Limitations**: Common audio metrics like **FAD** (Fréchet Audio Distance) often operate on downsampled mono audio, failing to capture high-frequency content and stereo spatialization.
+- **Perceptual Mismatch**: Automated metrics frequently diverge from human perception, necessitating costly and slow subjective evaluations.
+
+### 7.2 Deployment & Latency
+
+- **Real-Time Interaction**: High inference latency disrupts the user experience in interactive applications (e.g., gaming, live avatars).
+- **Computational Cost**: Processing synchronized high-fidelity video and audio streams imposes a massive computational burden.
+- **Compression Trade-offs**: Aggressive quantization or distillation required for deployment often degrades temporal coherence and audio fidelity.
+
+### 7.3 Modality Fusion & Hallucination
+
+- **Modality Hallucination**: Models may over-rely on dominant signals (e.g., text prompts) while ignoring subtle cues from others (e.g., audio texture), leading to misalignment.
+- **Unified Tokenization**: Designing tokenizers that can jointly compress video, audio, and text into a shared latent space without interference or resolution loss remains an architectural bottleneck.
+
+### 7.4 Physical Plausibility & Long-Horizon Consistency
+
+- **Physical Acoustics**: accurately modeling reverberation, occlusion, and the speed of sound in complex 3D environments is still in its infancy.
+- **Long-Horizon Drift**: Maintaining audio-visual synchronization and narrative coherence over long sequences (minutes to hours) is prone to accumulating errors and "drift."
