@@ -150,9 +150,9 @@ VAEs establish a probabilistic mapping between input data and a latent space. In
 
 | Paper / Model                                                                              | Category            | Year | Key Contribution                                        |
 | :----------------------------------------------------------------------------------------- | :------------------ | :--- | :------------------------------------------------------ |
-| [Auto-Encoding Variational Bayes](https://arxiv.org/abs/1312.6114)                         | **Foundational**    | 2013 | Introduces VAEs: probabilistic mapping to latent space. |
-| [Reducing the dimensionality of data](https://www.science.org/doi/10.1126/science.1127647) | **Foundational**    | 2006 | Traditional autoencoders mapping to fixed vectors.      |
-| [MM-Diffusion (VAE Usage)](https://arxiv.org/abs/2305.14458)                               | **Video/Audio VAE** | 2023 | Uses separate VAE encoders for video and audio streams. |
+| [**Auto-Encoding Variational Bayes**](https://arxiv.org/abs/1312.6114)                         | **Foundational**    | 2013 | Introduces VAEs: probabilistic mapping to latent space. |
+| [**Reducing the dimensionality of data**](https://www.science.org/doi/10.1126/science.1127647) | **Foundational**    | 2006 | Traditional autoencoders mapping to fixed vectors.      |
+| [**MM-Diffusion (VAE Usage)**](https://arxiv.org/abs/2305.14458)                               | **Video/Audio VAE** | 2023 | Uses separate VAE encoders for video and audio streams. |
 
 <div align="center">
   <img src="fig/VAE.png" width="90%" alt="VAE Architecture"/>
@@ -168,19 +168,19 @@ Diffusion models reverse a gradual noising process. Early architectures relied o
 
 | Paper / Model                                                     | Category             | Year | Key Contribution                                                  |
 | :---------------------------------------------------------------- | :------------------- | :--- | :---------------------------------------------------------------- |
-| [DDPM](https://arxiv.org/abs/2006.11239)                          | **Foundational**     | 2020 | Core framework for training generative models via denoising.      |
-| [Diffusion Models Beat GANs](https://arxiv.org/abs/2105.05233)    | **Foundational**     | 2021 | Demonstrates diffusion superiority in image synthesis.            |
-| [Video Diffusion Models](https://arxiv.org/abs/2204.03458)        | **Foundational**     | 2022 | Extends diffusion to video domain.                                |
-| [Imagen Video](https://arxiv.org/abs/2210.02303)                  | **Foundational**     | 2022 | High-definition video generation using cascaded diffusion models. |
-| [DDIM](https://arxiv.org/abs/2010.02502)                          | **Foundational**     | 2022 | Accelerates sampling for diffusion models.                        |
-| [Latent Diffusion Models (LDM)](https://arxiv.org/abs/2112.10752) | **Foundational**     | 2022 | Performs diffusion in compressed latent space for efficiency.     |
-| [U-Net](https://arxiv.org/abs/1505.04597)                         | **U-Net Backbone**   | 2015 | Original encoder-decoder architecture with skip connections.      |
-| [MM-Diffusion](https://arxiv.org/abs/2305.14458)                  | **Coupled U-Net**    | 2023 | Coupled U-Nets for joint video-audio denoising.                   |
-| [MM-LDM](https://arxiv.org/abs/2401.03048)                        | **Latent U-Net**     | 2024 | Multi-modal latent diffusion in shared semantic space.            |
-| [Diff-Foley](https://arxiv.org/abs/2306.11764)                    | **Audio-Visual**     | 2023 | Synchronized video-to-audio synthesis with LDMs.                  |
-| [AudioLDM](https://arxiv.org/abs/2301.12503)                      | **Audio-Visual**     | 2023 | Text-to-audio generation using LDMs and CLAP.                     |
-| [Align Your Latents](https://arxiv.org/abs/2304.08818)            | **Latent Alignment** | 2023 | High-resolution video synthesis with latent diffusion.            |
-| [MSF](https://arxiv.org/abs/2501.13349)                           | **Optimization**     | 2025 | Efficient diffusion via multi-scale latent factorization.         |
+| [**DDPM**](https://arxiv.org/abs/2006.11239)                          | **Foundational**     | 2020 | Core framework for training generative models via denoising.      |
+| [**Diffusion Models Beat GANs**](https://arxiv.org/abs/2105.05233)    | **Foundational**     | 2021 | Demonstrates diffusion superiority in image synthesis.            |
+| [**Video Diffusion Models**](https://arxiv.org/abs/2204.03458)        | **Foundational**     | 2022 | Extends diffusion to video domain.                                |
+| [**Imagen Video**](https://arxiv.org/abs/2210.02303)                  | **Foundational**     | 2022 | High-definition video generation using cascaded diffusion models. |
+| [**DDIM**](https://arxiv.org/abs/2010.02502)                          | **Foundational**     | 2022 | Accelerates sampling for diffusion models.                        |
+| [**Latent Diffusion Models (LDM)**](https://arxiv.org/abs/2112.10752) | **Foundational**     | 2022 | Performs diffusion in compressed latent space for efficiency.     |
+| [**U-Net**](https://arxiv.org/abs/1505.04597)                         | **U-Net Backbone**   | 2015 | Original encoder-decoder architecture with skip connections.      |
+| [**MM-Diffusion**](https://arxiv.org/abs/2305.14458)                  | **Coupled U-Net**    | 2023 | Coupled U-Nets for joint video-audio denoising.                   |
+| [**MM-LDM**](https://arxiv.org/abs/2401.03048)                        | **Latent U-Net**     | 2024 | Multi-modal latent diffusion in shared semantic space.            |
+| [**Diff-Foley**](https://arxiv.org/abs/2306.11764)                    | **Audio-Visual**     | 2023 | Synchronized video-to-audio synthesis with LDMs.                  |
+| [**AudioLDM**](https://arxiv.org/abs/2301.12503)                      | **Audio-Visual**     | 2023 | Text-to-audio generation using LDMs and CLAP.                     |
+| [**Align Your Latents**](https://arxiv.org/abs/2304.08818)            | **Latent Alignment** | 2023 | High-resolution video synthesis with latent diffusion.            |
+| [**MSF**](https://arxiv.org/abs/2501.13349)                           | **Optimization**     | 2025 | Efficient diffusion via multi-scale latent factorization.         |
 
 <div align="center">
   <img src="fig/Unet.drawio.svg" width="90%" alt="U-Net Architecture"/>
@@ -198,16 +198,16 @@ The current industry standard. DiT replaces U-Net with **Transformer** blocks, e
 
 | Paper / Model                                                 | Category              | Year | Key Contribution                                               |
 | :------------------------------------------------------------ | :-------------------- | :--- | :------------------------------------------------------------- |
-| [Scalable Diffusion Models](https://arxiv.org/abs/2212.09748) | **Core Architecture** | 2023 | Introduces DiT: Transformers as diffusion backbones.           |
-| [DiT (ICCV)](https://arxiv.org/abs/2212.09748)                | **Core Architecture** | 2023 | Scalable Diffusion Models with Transformers (Conference).      |
-| [Attention Is All You Need](https://arxiv.org/abs/1706.03762) | **Core Architecture** | 2017 | Foundational Transformer architecture with self-attention.     |
-| [Latte](https://arxiv.org/abs/2401.03048)                     | **Video DiT**         | 2024 | Latent Diffusion Transformer specialized for video generation. |
-| [OVI](https://aaxwaz.github.io/Ovi)                           | **Multimodal DiT**    | 2025 | Twin backbone cross-modal fusion for native AV generation.     |
-| [LTX-2](https://github.com/Lightricks/LTX-Video)              | **Multimodal DiT**    | 2026 | Efficient joint audio-visual foundation model (Native 4K).     |
-| [MMAudio](https://hkchengrex.github.io/MMAudio)               | **Multimodal DiT**    | 2025 | Taming multimodal joint training for high-quality synthesis.   |
-| [T5](https://arxiv.org/abs/1910.10683)                        | **Conditioning**      | 2020 | Text-to-text transfer transformer used for text encoding.      |
-| [CLIP](https://arxiv.org/abs/2103.00020)                      | **Conditioning**      | 2021 | Contrastive language-image pretraining for semantic alignment. |
-| [RoFormer (RoPE)](https://arxiv.org/abs/2104.09864)           | **Positional Enc.**   | 2024 | Rotary Position Embedding for temporal alignment.              |
+| [**Scalable Diffusion Models**](https://arxiv.org/abs/2212.09748) | **Core Architecture** | 2023 | Introduces DiT: Transformers as diffusion backbones.           |
+| [**DiT (ICCV)**](https://arxiv.org/abs/2212.09748)                | **Core Architecture** | 2023 | Scalable Diffusion Models with Transformers (Conference).      |
+| [**Attention Is All You Need**](https://arxiv.org/abs/1706.03762) | **Core Architecture** | 2017 | Foundational Transformer architecture with self-attention.     |
+| [**Latte**](https://arxiv.org/abs/2401.03048)                     | **Video DiT**         | 2024 | Latent Diffusion Transformer specialized for video generation. |
+| [**OVI**](https://aaxwaz.github.io/Ovi)                           | **Multimodal DiT**    | 2025 | Twin backbone cross-modal fusion for native AV generation.     |
+| [**LTX-2**](https://github.com/Lightricks/LTX-Video)              | **Multimodal DiT**    | 2026 | Efficient joint audio-visual foundation model (Native 4K).     |
+| [**MMAudio**](https://hkchengrex.github.io/MMAudio)               | **Multimodal DiT**    | 2025 | Taming multimodal joint training for high-quality synthesis.   |
+| [**T5**](https://arxiv.org/abs/1910.10683)                        | **Conditioning**      | 2020 | Text-to-text transfer transformer used for text encoding.      |
+| [**CLIP**](https://arxiv.org/abs/2103.00020)                      | **Conditioning**      | 2021 | Contrastive language-image pretraining for semantic alignment. |
+| [**RoFormer (RoPE)**](https://arxiv.org/abs/2104.09864)           | **Positional Enc.**   | 2024 | Rotary Position Embedding for temporal alignment.              |
 
 <div align="center">
   <img src="fig/DiT.svg" width="90%" alt="DiT Architecture"/>
@@ -229,16 +229,16 @@ MoE introduces sparse activation, where only a subset of parameters (experts) is
 
 | Paper / Model                                                          | Category             | Year | Key Contribution                                                |
 | :--------------------------------------------------------------------- | :------------------- | :--- | :-------------------------------------------------------------- |
-| [Wan 2.6](https://www.xrmm.com/)                                       | **Timestep MoE**     | 2025 | Large-scale MoE DiT for video generation.                       |
-| [Cosmos World](https://arxiv.org/abs/2501.03575)                       | **World Model**      | 2025 | Foundation model platform for physical AI with MoE.             |
-| [Outrageously Large Neural Networks](https://arxiv.org/abs/1701.06538) | **Foundational MoE** | 2017 | Introduces sparsely-gated Mixture-of-Experts layer.             |
-| [GShard](https://arxiv.org/abs/2006.16668)                             | **Foundational MoE** | 2020 | Scaling giant models with conditional computation.              |
-| [Switch Transformers](https://arxiv.org/abs/2101.03961)                | **Foundational MoE** | 2022 | Scaling to trillion parameters with simple sparsity.            |
-| [Scaling Vision with Sparse MoE](https://arxiv.org/abs/2106.05974)     | **Vision MoE**       | 2021 | Applying MoE to vision tasks.                                   |
-| [Uni-MoE](https://arxiv.org/abs/2405.11273)                            | **Multimodal MoE**   | 2025 | Scaling unified multimodal LLMs with MoE.                       |
-| [DeepSeekMoE](https://arxiv.org/abs/2401.06066)                        | **LLM MoE**          | 2024 | Ultimate expert specialization in MoE language models.          |
-| [SegMoE](https://arxiv.org/abs/2601.21641)                             | **Token MoE**        | 2026 | Multi-resolution segment-wise MoE for efficient generation.     |
-| [Race-DiT](https://arxiv.org/abs/2503.16057)                           | **Token MoE**        | 2025 | Flexible routing for improved sample quality and reduced FLOPs. |
+| [**Wan 2.6**](https://www.xrmm.com/)                                       | **Timestep MoE**     | 2025 | Large-scale MoE DiT for video generation.                       |
+| [**Cosmos World**](https://arxiv.org/abs/2501.03575)                       | **World Model**      | 2025 | Foundation model platform for physical AI with MoE.             |
+| [**Outrageously Large Neural Networks**](https://arxiv.org/abs/1701.06538) | **Foundational MoE** | 2017 | Introduces sparsely-gated Mixture-of-Experts layer.             |
+| [**GShard**](https://arxiv.org/abs/2006.16668)                             | **Foundational MoE** | 2020 | Scaling giant models with conditional computation.              |
+| [**Switch Transformers**](https://arxiv.org/abs/2101.03961)                | **Foundational MoE** | 2022 | Scaling to trillion parameters with simple sparsity.            |
+| [**Scaling Vision with Sparse MoE**](https://arxiv.org/abs/2106.05974)     | **Vision MoE**       | 2021 | Applying MoE to vision tasks.                                   |
+| [**Uni-MoE**](https://arxiv.org/abs/2405.11273)                            | **Multimodal MoE**   | 2025 | Scaling unified multimodal LLMs with MoE.                       |
+| [**DeepSeekMoE**](https://arxiv.org/abs/2401.06066)                        | **LLM MoE**          | 2024 | Ultimate expert specialization in MoE language models.          |
+| [**SegMoE**](https://arxiv.org/abs/2601.21641)                             | **Token MoE**        | 2026 | Multi-resolution segment-wise MoE for efficient generation.     |
+| [**Race-DiT**](https://arxiv.org/abs/2503.16057)                           | **Token MoE**        | 2025 | Flexible routing for improved sample quality and reduced FLOPs. |
 
 #### 2.4.2 Autoregressive Generation
 
@@ -246,12 +246,12 @@ Autoregressive (AR) models process video and audio as sequential tokens, enablin
 
 | Paper / Model                                     | Category       | Year | Key Contribution                                                    |
 | :------------------------------------------------ | :------------- | :--- | :------------------------------------------------------------------ |
-| [Unified-IO 2](https://arxiv.org/abs/2312.17172)  | **Unified AR** | 2023 | First autoregressive model to handle text, image, audio, and video. |
-| [BAGEL](https://arxiv.org/abs/2505.14683)         | **Unified AR** | 2025 | Unified framework for multimodal understanding and generation.      |
-| [EMMA](https://arxiv.org/abs/2512.04810)          | **Unified AR** | 2025 | Efficient multimodal model for video and audio understanding.       |
-| [Janus Pro](https://github.com/deepseek-ai/Janus) | **Unified AR** | 2025 | Decoupled visual encoding for unified multimodal generation.        |
-| [SpecVQGAN](https://arxiv.org/abs/2104.04415)     | **Early AR**   | 2021 | Autoregressive generation of audio spectrograms from video.         |
-| [Im2Wav](https://arxiv.org/abs/2211.14503)        | **Early AR**   | 2023 | Image-guided audio generation using autoregressive transformers.    |
+| [**Unified-IO 2**](https://arxiv.org/abs/2312.17172)  | **Unified AR** | 2023 | First autoregressive model to handle text, image, audio, and video. |
+| [**BAGEL**](https://arxiv.org/abs/2505.14683)         | **Unified AR** | 2025 | Unified framework for multimodal understanding and generation.      |
+| [**EMMA**](https://arxiv.org/abs/2512.04810)          | **Unified AR** | 2025 | Efficient multimodal model for video and audio understanding.       |
+| [**Janus Pro**](https://github.com/deepseek-ai/Janus) | **Unified AR** | 2025 | Decoupled visual encoding for unified multimodal generation.        |
+| [**SpecVQGAN**](https://arxiv.org/abs/2104.04415)     | **Early AR**   | 2021 | Autoregressive generation of audio spectrograms from video.         |
+| [**Im2Wav**](https://arxiv.org/abs/2211.14503)        | **Early AR**   | 2023 | Image-guided audio generation using autoregressive transformers.    |
 
 ---
 
@@ -285,10 +285,10 @@ Specialized modules designed to explicitly model and enforce synchronization bet
 
 | Paper / Model                                              | Category               | Year | Key Contribution                                                                                                    |
 | :--------------------------------------------------------- | :--------------------- | :--- | :------------------------------------------------------------------------------------------------------------------ |
-| [FoleyCrafter](https://github.com/open-mmlab/FoleyCrafter) | **Parallel Attention** | 2024 | Integrates parallel cross-attention layers alongside text-based attention to condition audio on video features.     |
-| [Syncphony](https://syncphony.github.io)                   | **Cross-Attention**    | 2025 | Injects audio features via cross-attention with RoPE to enable precise audio-motion alignment on DiT architectures. |
-| [Synchformer](https://arxiv.org/abs/2402.13258)            | **Sync Detection**     | 2024 | A hierarchical transformer for detecting audio-visual desynchronization at millisecond-level precision.             |
-| [AuTo-Video](https://arxiv.org/abs/2501.13349)             | **Temporal Loss**      | 2025 | Introduces onset-aware temporal loss functions to penalize misalignment between audio beats and visual motion.      |
+| [**FoleyCrafter**](https://github.com/open-mmlab/FoleyCrafter) | **Parallel Attention** | 2024 | Integrates parallel cross-attention layers alongside text-based attention to condition audio on video features.     |
+| [**Syncphony**](https://syncphony.github.io)                   | **Cross-Attention**    | 2025 | Injects audio features via cross-attention with RoPE to enable precise audio-motion alignment on DiT architectures. |
+| [**Synchformer**](https://arxiv.org/abs/2402.13258)            | **Sync Detection**     | 2024 | A hierarchical transformer for detecting audio-visual desynchronization at millisecond-level precision.             |
+| [**AuTo-Video**](https://arxiv.org/abs/2501.13349)             | **Temporal Loss**      | 2025 | Introduces onset-aware temporal loss functions to penalize misalignment between audio beats and visual motion.      |
 
 ### 3.4 Attention Injection & ControlNet
 
@@ -328,30 +328,30 @@ Quantitative evaluation assesses each modality independently as well as their cr
 | :--------------------------------------------------------------------------- | :--------------- | :--- | :----------------------------------------------------------------------------------- |
 | [**FVD**](https://openreview.net/pdf?id=rylgEULtdN) (Fréchet Video Distance) | **Distribution** | 2019 | Reference-based metric measuring distribution distance using I3D features.           |
 | [**CLIPScore**](https://arxiv.org/abs/2104.08718)                            | **Semantic**     | 2021 | Reference-free metric measuring text-video semantic alignment.                       |
-| [VBench](https://vbench.github.io)                                           | **Benchmark**    | 2023 | Fine-grained evaluation across dimensions like Dynamic Degree and Aesthetic Quality. |
-| [VBench++](https://github.com/Vchitect/VBench)                               | **Benchmark**    | 2025 | Extends VBench to image-to-video and model trustworthiness assessment.               |
-| [VBench-2.0](https://arxiv.org/abs/2503.21755)                               | **Benchmark**    | 2025 | Introduces physics-based realism, commonsense reasoning, and human fidelity.         |
+| [**VBench**](https://vbench.github.io)                                           | **Benchmark**    | 2023 | Fine-grained evaluation across dimensions like Dynamic Degree and Aesthetic Quality. |
+| [**VBench++**](https://github.com/Vchitect/VBench)                               | **Benchmark**    | 2025 | Extends VBench to image-to-video and model trustworthiness assessment.               |
+| [**VBench-2.0**](https://arxiv.org/abs/2503.21755)                               | **Benchmark**    | 2025 | Introduces physics-based realism, commonsense reasoning, and human fidelity.         |
 
 #### 4.1.2 Audio Quality Metrics
 
 | Metric / Benchmark                                               | Category         | Year | Key Contribution                                                             |
 | :--------------------------------------------------------------- | :--------------- | :--- | :--------------------------------------------------------------------------- |
-| [FAD](https://arxiv.org/abs/1812.08466) (Fréchet Audio Distance) | **Distribution** | 2019 | Compares generated and reference audio distributions using VGGish features.  |
-| [KAD](https://arxiv.org/abs/2306.01427) (Kernel Audio Distance)  | **Distribution** | -    | MMD-based approach addressing FAD's Gaussian assumption limitations.         |
-| [CLAP Score](https://arxiv.org/abs/2211.06687)                   | **Alignment**    | 2023 | Measures text-audio alignment via cosine similarity in CLAP embedding space. |
-| [PAM](https://arxiv.org/abs/2402.13258)                          | **Prompting**    | 2024 | Prompt Adherence Metric using Audio-Language Models.                         |
-| [Audiobox Aesthetics](https://arxiv.org/abs/2312.11325)          | **Quality**      | 2023 | Decomposes quality into axes like Production Quality and Content Enjoyment.  |
-| [MAD](https://arxiv.org/abs/2212.10426)                          | **Distribution** | -    | MAUVE Audio Divergence, a non-Gaussian alternative to FAD.                   |
+| [**FAD**](https://arxiv.org/abs/1812.08466) (Fréchet Audio Distance) | **Distribution** | 2019 | Compares generated and reference audio distributions using VGGish features.  |
+| [**KAD**](https://arxiv.org/abs/2306.01427) (Kernel Audio Distance)  | **Distribution** | -    | MMD-based approach addressing FAD's Gaussian assumption limitations.         |
+| [**CLAP Score**](https://arxiv.org/abs/2211.06687)                   | **Alignment**    | 2023 | Measures text-audio alignment via cosine similarity in CLAP embedding space. |
+| [**PAM**](https://arxiv.org/abs/2402.13258)                          | **Prompting**    | 2024 | Prompt Adherence Metric using Audio-Language Models.                         |
+| [**Audiobox Aesthetics**](https://arxiv.org/abs/2312.11325)          | **Quality**      | 2023 | Decomposes quality into axes like Production Quality and Content Enjoyment.  |
+| [**MAD**](https://arxiv.org/abs/2212.10426)                          | **Distribution** | -    | MAUVE Audio Divergence, a non-Gaussian alternative to FAD.                   |
 
 #### 4.1.3 Audio-Visual Alignment Metrics
 
 | Metric / Benchmark                                   | Category         | Year | Key Contribution                                                           |
 | :--------------------------------------------------- | :--------------- | :--- | :------------------------------------------------------------------------- |
-| [AV-Align](https://arxiv.org/abs/2305.14458)         | **Semantic**     | 2023 | Measures semantic correspondence between audio and video streams.          |
-| [DeSync](https://arxiv.org/abs/2402.13258)           | **Temporal**     | 2024 | Quantifies temporal misalignment using the Synchformer model.              |
-| [ImageBind Score](https://arxiv.org/abs/2305.05665)  | **Alignment**    | 2023 | Computes cosine similarity in ImageBind's joint embedding space.           |
-| [FAVD](https://arxiv.org/abs/2101.08779)             | **Distribution** | 2019 | Extends Fréchet distance to joint audio-visual features.                   |
-| [Spatial AV-Align](https://arxiv.org/abs/2301.xxxxx) | **Spatial**      | 2023 | Evaluates spatial coherence using object detection and sound localization. |
+| [**AV-Align**](https://arxiv.org/abs/2305.14458)         | **Semantic**     | 2023 | Measures semantic correspondence between audio and video streams.          |
+| [**DeSync**](https://arxiv.org/abs/2402.13258)           | **Temporal**     | 2024 | Quantifies temporal misalignment using the Synchformer model.              |
+| [**ImageBind Score**](https://arxiv.org/abs/2305.05665)  | **Alignment**    | 2023 | Computes cosine similarity in ImageBind's joint embedding space.           |
+| [**FAVD**](https://arxiv.org/abs/2101.08779)             | **Distribution** | 2019 | Extends Fréchet distance to joint audio-visual features.                   |
+| [**Spatial AV-Align**](https://arxiv.org/abs/2301.xxxxx) | **Spatial**      | 2023 | Evaluates spatial coherence using object detection and sound localization. |
 
 ### 4.2 Qualitative Evaluation
 
@@ -381,9 +381,9 @@ Personal applications focus on social media content creation, entertainment, and
 
 | Paper / Model                                                 | Category     | Year | Key Contribution                                                                        |
 | :------------------------------------------------------------ | :----------- | :--- | :-------------------------------------------------------------------------------------- |
-| **Sora 2**                                                    | Social Media | 2025 | Generates synchronized dialogue, Foley, and ambient audio; includes social sharing app. |
-| **Doubao**                                                    | Social Media | 2025 | Integrated audio-visual generation for short clips on TikTok.                           |
-| **Kling AI**                                                  | Social Media | 2025 | Text-to-video with integrated audio capabilities.                                       |
+| [**Sora 2**](https://openai.com/index/sora-2/)                | Social Media | 2025 | Generates synchronized dialogue, Foley, and ambient audio; includes social sharing app. |
+| [**Doubao**](https://www.doubao.com/)                         | Social Media | 2025 | Integrated audio-visual generation for short clips on TikTok.                           |
+| [**Kling AI**](https://klingai.com/)                          | Social Media | 2025 | Text-to-video with integrated audio capabilities.                                       |
 | [**Hallo**](https://github.com/fudan-generative-vision/hallo) | Avatar       | 2024 | Audio-driven portrait animation with natural lip sync.                                  |
 | [**EchoMimic**](https://github.com/BadToBest/EchoMimic)       | Avatar       | 2024 | Identity-preserving audio-driven avatar generation.                                     |
 | [**OmniHuman-1**](https://omni-human.github.io)               | Avatar       | 2025 | Full-body audio-driven animation with expressive gestures and singing.                  |
@@ -395,10 +395,10 @@ Commercial adoption spans advertising, film production, and gaming, leveraging n
 | Paper / Model                                           | Category      | Year | Key Contribution                                                                           |
 | :------------------------------------------------------ | :------------ | :--- | :----------------------------------------------------------------------------------------- |
 | [**Movie Gen**](https://ai.meta.com/research/movie-gen) | Entertainment | 2024 | Personalizes video generation for users; precise editing and sound design.                 |
-| **Runway**                                              | Film & TV     | 2023 | Professional tools for video editing, in-painting, and style transfer.                     |
-| **Luma**                                                | Gaming        | 2024 | 3D capture and video generation for game assets and environments.                          |
-| **Pika**                                                | Marketing     | 2023 | Animation of static images and text-to-video for marketing materials.                      |
-| **VEO**                                                 | Enterprise    | 2024 | High-fidelity video generation for enterprise use cases, integrated into Google Workspace. |
+| [**Runway**](https://runwayml.com/)                     | Film & TV     | 2023 | Professional tools for video editing, in-painting, and style transfer.                     |
+| [**Luma**](https://lumalabs.ai/dream-machine)           | Gaming        | 2024 | 3D capture and video generation for game assets and environments.                          |
+| [**Pika**](https://pika.art/)                           | Marketing     | 2023 | Animation of static images and text-to-video for marketing materials.                      |
+| [**VEO**](https://deepmind.google/models/veo/)          | Enterprise    | 2024 | High-fidelity video generation for enterprise use cases, integrated into Google Workspace. |
 
 ## 6. 🔬 Active Research Areas in Multimodal Video Generation
 
@@ -410,11 +410,11 @@ Synthesizing temporally and semantically aligned audio from video inputs.
 
 | Paper / Model                                              | Category  | Year | Key Contribution                                                                  |
 | :--------------------------------------------------------- | :-------- | :--- | :-------------------------------------------------------------------------------- |
-| [Diff-Foley](https://github.com/luoscial/Diff-Foley)       | V2A       | 2024 | Latent diffusion with Contrastive Audio-Video Pretraining (CAVP).                 |
-| [MMAudio](https://hkchengrex.github.io/MMAudio/)           | V2A       | 2025 | Joint training with conditional synchronization module for video-audio alignment. |
-| [MM-Diffusion](https://github.com/researchmm/MM-Diffusion) | Joint Gen | 2022 | Coupled U-Net with randomly shifted attention for cross-modal consistency.        |
-| [AV-DiT](https://arxiv.org/abs/2501.13349)                 | Joint Gen | 2025 | Adapts pretrained DiT with modality-specific adapters for joint generation.       |
-| [UniForm](https://arxiv.org/abs/2501.xxxxx)                | Joint Gen | 2025 | Unified single-tower DiT processing concatenated audio-video tokens.              |
+| [**Diff-Foley**](https://github.com/luoscial/Diff-Foley)       | V2A       | 2024 | Latent diffusion with Contrastive Audio-Video Pretraining (CAVP).                 |
+| [**MMAudio**](https://hkchengrex.github.io/MMAudio/)           | V2A       | 2025 | Joint training with conditional synchronization module for video-audio alignment. |
+| [**MM-Diffusion**](https://github.com/researchmm/MM-Diffusion) | Joint Gen | 2022 | Coupled U-Net with randomly shifted attention for cross-modal consistency.        |
+| [**AV-DiT**](https://arxiv.org/abs/2501.13349)                 | Joint Gen | 2025 | Adapts pretrained DiT with modality-specific adapters for joint generation.       |
+| [**UniForm**](https://arxiv.org/abs/2501.xxxxx)                | Joint Gen | 2025 | Unified single-tower DiT processing concatenated audio-video tokens.              |
 
 ### 6.2 Streaming Multimodal Video Generation
 
@@ -422,9 +422,9 @@ Real-time generation with strict latency constraints for live applications.
 
 | Paper / Model                                                       | Category        | Year | Key Contribution                                                                 |
 | :------------------------------------------------------------------ | :-------------- | :--- | :------------------------------------------------------------------------------- |
-| [CausVid](https://arxiv.org/abs/2501.xxxxx)                         | Causal Modeling | 2025 | Causal autoregressive transformer distilled from bidirectional DiT.              |
-| [MotionStream](https://arxiv.org/abs/2501.xxxxx)                    | Causal Modeling | 2025 | Interactive streaming with sliding-window causal attention and KV cache rolling. |
-| [StreamDiffusion](https://github.com/cumulo-autumn/StreamDiffusion) | Real-time       | 2025 | Real-time diffusion pipeline optimized for interactive generation.               |
+| [**CausVid**](https://arxiv.org/abs/2501.xxxxx)                         | Causal Modeling | 2025 | Causal autoregressive transformer distilled from bidirectional DiT.              |
+| [**MotionStream**](https://arxiv.org/abs/2501.xxxxx)                    | Causal Modeling | 2025 | Interactive streaming with sliding-window causal attention and KV cache rolling. |
+| [**StreamDiffusion**](https://github.com/cumulo-autumn/StreamDiffusion) | Real-time       | 2025 | Real-time diffusion pipeline optimized for interactive generation.               |
 
 ### 6.3 Human-Centric Multimodal Video Generation
 
@@ -432,11 +432,11 @@ Focuses on realistic talking heads, pose animation, and customization.
 
 | Paper / Model                                       | Category       | Year | Key Contribution                                                   |
 | :-------------------------------------------------- | :------------- | :--- | :----------------------------------------------------------------- |
-| [MultiTalk](https://github.com/Kedreamix/MultiTalk) | Face Animation | 2025 | Maps speech signals to mouth shapes and facial motion.             |
-| [InfiniteTalk](https://arxiv.org/abs/2508.14033)    | Face Animation | 2025 | Infinite-length talking head generation addressing temporal drift. |
-| [Wan-Animate](https://wan-video.com)                | Pose Animation | 2025 | Maps target poses to realistic human videos.                       |
-| [HuMo](https://arxiv.org/abs/2501.xxxxx)            | Customization  | 2025 | Controllable identity transfer for video generation.               |
-| [MMSonate](https://arxiv.org/abs/2601.01568)        | Customization  | 2026 | Consistent audio-visual identity control across generated content. |
+| [**MultiTalk**](https://github.com/Kedreamix/MultiTalk) | Face Animation | 2025 | Maps speech signals to mouth shapes and facial motion.             |
+| [**InfiniteTalk**](https://arxiv.org/abs/2508.14033)    | Face Animation | 2025 | Infinite-length talking head generation addressing temporal drift. |
+| [**Wan-Animate**](https://wan-video.com)                | Pose Animation | 2025 | Maps target poses to realistic human videos.                       |
+| [**HuMo**](https://arxiv.org/abs/2501.xxxxx)            | Customization  | 2025 | Controllable identity transfer for video generation.               |
+| [**MMSonate**](https://arxiv.org/abs/2601.01568)        | Customization  | 2026 | Consistent audio-visual identity control across generated content. |
 
 ### 6.4 Long Multimodal Video Generation
 
