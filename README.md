@@ -74,6 +74,12 @@ A summary of current state-of-the-art multimodal video diffusion models discusse
       <td colspan="4"><b>Proprietary Business Models</b></td>
     </tr>
     <tr>
+      <td><a href="[https://deepmind.google/models/veo/](https://seedance2.ai)"><b>SeedDance 2.0</b></a></td>
+      <td>-</td>
+      <td>Native audiovisual synthesis</td>
+      <td>Feb 2026</td>
+    </tr>
+    <tr>
       <td><a href="https://deepmind.google/models/veo/"><b>Google Veo 3.1</b></a></td>
       <td>Diffusion + Sync Audio</td>
       <td>Native audiovisual synthesis</td>
@@ -86,7 +92,7 @@ A summary of current state-of-the-art multimodal video diffusion models discusse
       <td>Sep 2025</td>
     </tr>
     <tr>
-      <td><b>Grok 4</b></td>
+       <td><a href="https://grok.com/imagine"><b>Grok 4</b></a></td>
       <td>-</td>
       <td>-</td>
       <td>July 2025</td>
