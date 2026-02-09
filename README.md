@@ -51,7 +51,14 @@
 If you find this survey useful for your research, please cite our work:
 
 ```bibtex
-Coming soon
+@unknown{unknown,
+author = {Li, Zongxia},
+year = {2026},
+month = {02},
+pages = {},
+title = {Multimodal Video Generation Models with Audio: Present and Future},
+doi = {10.13140/RG.2.2.13377.42081}
+}
 ```
 
 ---
