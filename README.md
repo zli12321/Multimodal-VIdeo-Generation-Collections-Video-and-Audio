@@ -81,7 +81,7 @@ A summary of current state-of-the-art multimodal video diffusion models discusse
       <td colspan="4"><b>Proprietary Business Models</b></td>
     </tr>
     <tr>
-      <td><a href="[https://deepmind.google/models/veo/](https://seedance2.ai)"><b>SeedDance 2.0</b></a></td>
+      <td><a href="https://seedance2.ai"><b>SeedDance 2.0</b></a></td>
       <td>-</td>
       <td>Native audiovisual synthesis</td>
       <td>Feb 2026</td>
