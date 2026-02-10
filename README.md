@@ -1,6 +1,6 @@
 # 🎬 Multimodal Video Generation Models with Audio: Present and Future
 
-[![Paper](https://img.shields.io/badge/Paper-arXiv-b31b1b.svg)](https://arxiv.org)
+[![Temporary Paper Link](https://img.shields.io/badge/Paper-arXiv-b31b1b.svg)](https://www.researchgate.net/publication/400595909_Multimodal_Video_Generation_Models_with_Audio_Present_and_Future?showFulltext=1&linkId=698a34f442f94d1212a87614)
 [![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
